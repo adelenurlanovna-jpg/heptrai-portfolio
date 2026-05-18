@@ -244,21 +244,18 @@ a:hover {
    ───────────────────────────────────────────────────────── */
 .profile-card {
   position: relative;
-  width: 300px;                                /* v2.4: narrower than HEPTRA cap */
-  margin-top: -300px;                          /* v2.4: breathing gap below HEPTRA, sits on upper leg */
-  padding: 10px;
+  width: 370px;                                /* v2.7: splitform-exact width */
+  margin-top: -300px;                          /* same overlap on the 7's leg */
+  padding: 8px;                                /* splitform-exact */
   display: flex;
   gap: 10px;
   align-items: center;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.045);      /* v2.4: a whisper more transparent */
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  -webkit-backdrop-filter: blur(16px) saturate(170%);
-          backdrop-filter: blur(16px) saturate(170%);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.16),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.22),
-    0 10px 28px rgba(0, 0, 0, 0.40);
+  border-radius: 16px;                         /* splitform-exact */
+  background: rgba(255, 255, 255, 0.025);      /* v2.7: more transparent than splitform's 0.04 */
+  /* no border — splitform has none */
+  -webkit-backdrop-filter: blur(16px);         /* splitform-exact, no saturate */
+          backdrop-filter: blur(16px);
+  /* no box-shadow — splitform has none, pure glass */
   overflow: hidden;
   z-index: 2;
 }
