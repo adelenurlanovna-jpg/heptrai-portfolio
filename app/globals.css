@@ -46,20 +46,37 @@ a:hover {
 }
 
 /* ─────────────────────────────────────────────────────────
-   HERO LOGO — chrome PNG + Paper Shaders Heatmap overlay.
-   Heatmap renders a white-pearl wave of light flowing
-   diagonally THROUGH the logo (uses chrome PNG as silhouette).
-   Composited via mix-blend-mode: screen so it only ADDS light
-   to the chrome — like sunrise across a planet.
+   PAGE LAYOUT — splitform-exact column.
+   400px wide, centered horizontally, padding 0 15px.
+   Top-aligned (NOT vertical-center) so the logo sits at the top
+   of the column with room below for the profile card / content.
    ───────────────────────────────────────────────────────── */
+.splitform-main {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 24px 15px 96px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+/* ─────────────────────────────────────────────────────────
+   HERO LOGO — splitform-inspired geometry adapted to wide aspect.
+   - WIDTH 428px = same as splitform (wider than the 400px column = -14px overflow each side)
+   - HEIGHT auto from native aspect ratio 816:462 = ~242px
+   - z-index -1 so future profile card sits in front
+   - overflow visible so halo can bleed naturally
+   ───────────────────────────────────────────────────────── */
 .hero-stage {
   position: relative;
-  width: clamp(320px, 48vw, 640px);
-  aspect-ratio: 816 / 462;             /* match logo's native ratio */
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 560px;                  /* bigger than splitform's 428 — fills more of the visual field */
+  aspect-ratio: 816 / 462;
+  margin: 24px -80px 0;          /* -80px per side so 560px stage centers over 400px column */
+  z-index: -1;
   isolation: isolate;
 }
 
@@ -75,13 +92,15 @@ a:hover {
   animation:
     floatY 7s ease-in-out infinite,
     glowBurst 6s ease-in-out infinite;
+  /* Expanded halo — wider, brighter, splitform-style atmospheric glow */
   filter:
     saturate(1.7)
     contrast(1.2)
     brightness(1.18)
-    drop-shadow(0 0 14px rgba(255, 225, 170, 0.55))
-    drop-shadow(0 0 36px rgba(255, 220, 180, 0.32))
-    drop-shadow(0 0 80px rgba(255, 215, 170, 0.18));
+    drop-shadow(0 0 24px rgba(255, 225, 170, 0.65))
+    drop-shadow(0 0 60px rgba(255, 220, 180, 0.45))
+    drop-shadow(0 0 140px rgba(255, 215, 170, 0.30))
+    drop-shadow(0 0 240px rgba(255, 210, 160, 0.18));
 }
 
 /* Layer 2: animated light sweep — masked to chrome silhouette.
@@ -162,21 +181,23 @@ a:hover {
   100% { transform: translate(-35%, -35%); }
 }
 
-/* Chrome breathes brighter during sweep peaks — 6s cycle, gold-leaning halo. */
+/* Chrome breathes brighter during sweep peaks — 6s cycle, wide halo. */
 @keyframes glowBurst {
   0%, 100% {
     filter:
       saturate(1.7) contrast(1.2) brightness(1.18)
-      drop-shadow(0 0 14px rgba(255, 225, 170, 0.55))
-      drop-shadow(0 0 36px rgba(255, 220, 180, 0.32))
-      drop-shadow(0 0 80px rgba(255, 215, 170, 0.18));
+      drop-shadow(0 0 24px rgba(255, 225, 170, 0.65))
+      drop-shadow(0 0 60px rgba(255, 220, 180, 0.45))
+      drop-shadow(0 0 140px rgba(255, 215, 170, 0.30))
+      drop-shadow(0 0 240px rgba(255, 210, 160, 0.18));
   }
   50% {
     filter:
       saturate(1.95) contrast(1.28) brightness(1.30)
-      drop-shadow(0 0 20px rgba(255, 230, 180, 0.75))
-      drop-shadow(0 0 56px rgba(255, 220, 180, 0.50))
-      drop-shadow(0 0 120px rgba(255, 215, 170, 0.28));
+      drop-shadow(0 0 32px rgba(255, 230, 180, 0.85))
+      drop-shadow(0 0 88px rgba(255, 225, 180, 0.62))
+      drop-shadow(0 0 200px rgba(255, 215, 170, 0.45))
+      drop-shadow(0 0 320px rgba(255, 210, 160, 0.25));
   }
 }
 

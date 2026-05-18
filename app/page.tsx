@@ -2,9 +2,17 @@
 
 import { motion } from "framer-motion";
 
+/**
+ * Page layout matches splitform exactly:
+ * - main: 400px wide centered column, padding 0 15px
+ * - hero-stage: 428×478 container, wider than the column on both sides
+ *   - overflow:hidden clips the logo at top (it extends -68px above)
+ *   - z-index -1 so future profile card sits in front
+ * - logo: PNG sized to fill the 428px width, native aspect ratio preserved
+ */
 export default function Home() {
   return (
-    <main className="min-h-screen flex items-center justify-center px-4 overflow-hidden">
+    <main className="splitform-main">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -12,7 +20,7 @@ export default function Home() {
         className="hero-stage"
         aria-label="HΞPTRΛI"
       >
-        {/* Layer 1 (base): chrome HEPTRA logo, untouched native colors. */}
+        {/* Layer 1 (base): chrome HEPTRA logo. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/heptra-hero-hd.png"
@@ -26,8 +34,7 @@ export default function Home() {
           className="hero-img-base"
         />
 
-        {/* Layer 2: animated diagonal light sweep, masked to chrome silhouette.
-            Two bands stacked: primary diagonal (135°) + perpendicular sparkle (45°) at different speeds. */}
+        {/* Layer 2: animated diagonal light sweep, masked to chrome silhouette. */}
         <div className="hero-light-sweep" aria-hidden="true">
           <div className="hero-light-sweep-band" />
           <div className="hero-light-sparkle-band" />
