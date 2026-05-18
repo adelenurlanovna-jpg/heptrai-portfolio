@@ -105,13 +105,14 @@ a:hover {
 /* Layer 2: animated light sweep — masked to chrome silhouette.
    screen blend — adds light without burn-out at peaks. */
 .hero-light-sweep {
-  display: none;                 /* v2: kill animated sweep — distracting on a watermark */
+  /* v2.2: re-enabled, dimmed via opacity below — atmospheric, not aggressive */
   position: absolute;
   inset: 0;
   z-index: 2;
   pointer-events: none;
   overflow: hidden;
   mix-blend-mode: screen;
+  opacity: 0.55;                 /* v2.2: dim the whole sweep layer so it whispers, doesn't shout */
   -webkit-mask-image: url("/heptra-hero-hd.png");
           mask-image: url("/heptra-hero-hd.png");
   -webkit-mask-size: contain;
@@ -145,7 +146,7 @@ a:hover {
     rgba(255, 255, 255, 0) 100%
   );
   will-change: transform;
-  animation: bandSweepSlow 3.6s linear infinite;
+  animation: bandSweepSlow 8s linear infinite;   /* v2.2: slower — meditative on a watermark */
 }
 
 /* SECONDARY SPARKLE BAND — smooth narrow white streak,
@@ -167,8 +168,8 @@ a:hover {
     rgba(255, 255, 255, 0) 100%
   );
   will-change: transform;
-  animation: bandSparkleSlow 6s linear infinite;
-  opacity: 0.75;
+  animation: bandSparkleSlow 12s linear infinite;   /* v2.2: slower sparkle */
+  opacity: 0.55;                                    /* v2.2: dimmed sparkle */
 }
 
 @keyframes bandSweepSlow {
