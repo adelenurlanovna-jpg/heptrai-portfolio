@@ -2,7 +2,42 @@
 
 ## 🔒 Откат к утверждённому состоянию
 
-### Последнее утверждённое: layout + splitform-сайз (18.05.2026)
+### ⭐ Текущая ЗАФИКСИРОВАННАЯ версия: v2.7 — splitform-exact card (19.05.2026)
+
+```bash
+cd ~/heptrai
+git checkout v2.7-splitform-exact
+```
+
+**Tag:** `v2.7-splitform-exact`
+**Commit:** `20a8508` — `snapshot: v2.7 — Splitform-exact card params + max transparency`
+
+Что зафиксировано:
+- Hero семёрка 800px (золотая середина между splitform и гигантом)
+- Карточка точно как у splitform: 370px width, blur(16px), no border, no shadow, radius 16px, padding 8px
+- Прозрачность ЕЩЁ выше чем у splitform: bg `rgba(255, 255, 255, 0.025)` (vs их 0.04)
+- Pure glass effect — ножка 7 ярко просвечивает
+- Аватар AK placeholder gradient 80×80 (фото удалено по решению)
+- Скриншот: `_versions/v2.7-splitform-exact.jpeg`
+
+### Предыдущие версии (можно вернуться к любой)
+
+```bash
+git tag -l 'v2*'                   # посмотреть все снимки v2 семьи
+git checkout v2.6-middle           # семёрка 800px, карточка 300px
+git checkout v2.4-mini-glass       # мини glass на гигантской 7
+git checkout v2.3-glass            # большая glass карточка
+git checkout v1-breathing          # карточка под семёркой, без перекрытия
+```
+
+### Альтернативные роуты (живут параллельно)
+
+- `/v1` — breathing (карточка под семёркой)
+- `/v2` — splitform-exact glass (= главная)
+- `/v3` — chrome card
+- `/v4` — frosted ice card
+
+### Если нужно вернуться к старому состоянию (до v2.7)
 
 ```bash
 cd ~/heptrai
