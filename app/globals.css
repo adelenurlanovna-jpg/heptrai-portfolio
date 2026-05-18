@@ -73,9 +73,9 @@ a:hover {
    ───────────────────────────────────────────────────────── */
 .hero-stage {
   position: relative;
-  width: 600px;                  /* v2.5: closer to splitform's 428, just a bit bigger */
+  width: 800px;                  /* v2.6: middle ground — 2× splitform, half-way between 600 and 1100 */
   aspect-ratio: 816 / 462;
-  margin: 16px -100px 0;         /* -100px per side so 600px stage centers over 400px column */
+  margin: 16px -200px 0;         /* -200px per side so 800px stage centers over 400px column */
   z-index: -1;
   isolation: isolate;
 }
@@ -89,17 +89,17 @@ a:hover {
   height: 100%;
   object-fit: contain;
   z-index: 1;
-  opacity: 0.95;                 /* v2.5: smaller logo, slightly more solid */
+  opacity: 0.93;                 /* v2.6: balanced brightness for 800px hero */
   animation: floatY 9s ease-in-out infinite;
-  /* v2.5: halo scaled down proportionally for 600px hero */
+  /* v2.6: halo proportional to 800px hero */
   filter:
-    saturate(1.55)
+    saturate(1.58)
     contrast(1.15)
-    brightness(1.12)
-    blur(0.3px)
-    drop-shadow(0 0 44px rgba(255, 215, 170, 0.38))
-    drop-shadow(0 0 110px rgba(255, 210, 160, 0.22))
-    drop-shadow(0 0 185px rgba(255, 200, 150, 0.12));
+    brightness(1.13)
+    blur(0.35px)
+    drop-shadow(0 0 58px rgba(255, 215, 170, 0.40))
+    drop-shadow(0 0 150px rgba(255, 210, 160, 0.24))
+    drop-shadow(0 0 250px rgba(255, 200, 150, 0.13));
 }
 
 /* Layer 2: animated light sweep — masked to chrome silhouette.
