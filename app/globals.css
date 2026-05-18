@@ -353,39 +353,6 @@ a:hover {
 }
 
 /* ─────────────────────────────────────────────────────────
-   AVATAR — PHOTO variants (replace gradient with real photo).
-   .profile-avatar-bw — monochrome / classic
-   .profile-avatar-cyan — duotone with brand cyan
-   ───────────────────────────────────────────────────────── */
-.profile-avatar-photo {
-  background-image: url('/adele.jpg');
-  background-size: cover;
-  background-position: center 18%;            /* zoom slightly to focus on face */
-  background-color: #0a0a0a;
-}
-
-/* B&W classic */
-.profile-avatar-bw {
-  filter: grayscale(100%) contrast(1.08) brightness(0.95);
-}
-
-/* Cyan duotone — photo multiplied with brand cyan via background-blend-mode.
-   This works around the filter+pseudo-element stacking issue. */
-.profile-avatar-cyan {
-  background-image: url('/adele.jpg');
-  background-size: cover;
-  background-position: center 18%;
-  background-color: #00FFD1;
-  background-blend-mode: multiply;
-  filter: contrast(1.10) brightness(1.05);
-}
-
-/* When a photo is shown, hide the AK fallback initials. */
-.profile-avatar-photo .profile-avatar-initials {
-  display: none;
-}
-
-/* ─────────────────────────────────────────────────────────
    V1 BREATHING CARD — sits BELOW the seven, no overlap.
    Clean composition: hero → air → passport.
    ───────────────────────────────────────────────────────── */
