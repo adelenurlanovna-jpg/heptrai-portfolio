@@ -233,6 +233,120 @@ a:hover {
 }
 
 
+/* ─────────────────────────────────────────────────────────
+   PROFILE CARD — splitform-exact geometry & transparency.
+   - 370 × 176, padding 8px, radius 16px, no border (matches splitform DOM)
+   - bg rgba(255,255,255,0.04) + backdrop-filter: blur(16px) — same as splitform
+   - PULL UP via negative margin-top so card overlaps bottom 130px of the logo
+     (same overlap pattern as splitform: logo y=-68→410, card y=206)
+   - Tiny inset highlight keeps the premium liquid-glass feel
+   ───────────────────────────────────────────────────────── */
+.profile-card {
+  position: relative;
+  width: 370px;
+  min-height: 176px;
+  margin-top: 56px;                            /* clear the logo — breathing room below the "7" */
+  padding: 8px;
+  display: flex;
+  gap: 12px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.025);      /* near-invisible — pure glass */
+  border: 1px solid rgba(255, 255, 255, 0.06); /* whisper-thin frame */
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);  /* soft drop only, no inner glow */
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Avatar — 160×160 square (matches splitform avatar size).
+   Radius 8px (small, like iOS app icon). */
+.profile-avatar {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 30% 25%, #ffd2bf 0%, #d896c4 35%, #7da7df 70%, #2a3358 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.30),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.18),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.profile-avatar-initials {
+  font-family: var(--font-jetbrains), monospace;
+  font-weight: 700;
+  font-size: 56px;
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+.profile-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  padding: 6px 4px 6px 2px;
+}
+
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.profile-name {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.profile-handle {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.14em;
+  margin-top: 2px;
+}
+
+.profile-tag {
+  align-self: flex-start;
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.92);
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 100, 170, 0.32) 0%,
+    rgba(255, 200, 100, 0.28) 50%,
+    rgba(120, 210, 255, 0.32) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  margin: 6px 0;
+}
+
+.profile-bio {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 11px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+}
+
 /* Animations */
 @keyframes floatY {
   0%, 100% { transform: translateY(0px); }

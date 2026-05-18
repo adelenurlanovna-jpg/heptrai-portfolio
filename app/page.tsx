@@ -43,6 +43,33 @@ export default function Home() {
         {/* Layer 3: subtle grain noise overlay, also masked to silhouette. */}
         <div className="hero-grain" aria-hidden="true" />
       </motion.div>
+
+      {/* ── Profile card (Apple Vision Pro liquid glass) ── */}
+      <motion.section
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+        className="profile-card"
+        aria-label="Profile"
+      >
+        {/* Avatar — placeholder gradient + initials. Swap for your photo later. */}
+        <div className="profile-avatar" aria-hidden="true">
+          <span className="profile-avatar-initials">AK</span>
+        </div>
+
+        <div className="profile-body">
+          <div className="profile-header">
+            <h1 className="profile-name">Adele</h1>
+            <span className="profile-handle">HΞPTRΛI</span>
+          </div>
+
+          <span className="profile-tag">AI, Web3 &amp; Vibecoding</span>
+
+          <p className="profile-bio">
+            Делаем полный цикл запуска продуктов в Web3, AI и тех. направлениях
+          </p>
+        </div>
+      </motion.section>
     </main>
   );
 }
