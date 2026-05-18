@@ -1,26 +1,322 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --meta: #666666;
+  --line: #1a1a1a;
+  --accent: #00FFD1;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-meta: var(--meta);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-ibm-plex);
+  --font-mono: var(--font-jetbrains);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  background: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-ibm-plex), ui-monospace, SFMono-Regular, monospace;
+  font-feature-settings: "ss01", "ss02", "ss03";
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--background);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* ─────────────────────────────────────────────────────────
+   HERO LOGO — chrome PNG + Paper Shaders Heatmap overlay.
+   Heatmap renders a white-pearl wave of light flowing
+   diagonally THROUGH the logo (uses chrome PNG as silhouette).
+   Composited via mix-blend-mode: screen so it only ADDS light
+   to the chrome — like sunrise across a planet.
+   ───────────────────────────────────────────────────────── */
+
+.hero-stage {
+  position: relative;
+  width: clamp(320px, 48vw, 640px);
+  aspect-ratio: 816 / 462;             /* match logo's native ratio */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  isolation: isolate;
+}
+
+/* Base chrome image — pumped to vibrant 3-color iridescent (cyan + pink + gold accent).
+   Stronger saturation + brightness, plus a warm-gold-leaning drop-shadow halo. */
+.hero-img-base {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+  animation:
+    floatY 7s ease-in-out infinite,
+    glowBurst 6s ease-in-out infinite;
+  filter:
+    saturate(1.7)
+    contrast(1.2)
+    brightness(1.18)
+    drop-shadow(0 0 14px rgba(255, 225, 170, 0.55))
+    drop-shadow(0 0 36px rgba(255, 220, 180, 0.32))
+    drop-shadow(0 0 80px rgba(255, 215, 170, 0.18));
+}
+
+/* Layer 2: animated light sweep — masked to chrome silhouette.
+   screen blend — adds light without burn-out at peaks. */
+.hero-light-sweep {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+  mix-blend-mode: screen;
+  -webkit-mask-image: url("/heptra-hero-hd.png");
+          mask-image: url("/heptra-hero-hd.png");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  animation: floatY 6s ease-in-out infinite;
+}
+
+/* PRIMARY BAND — clean smooth rising diagonal sweep at 45°.
+   No pixel mask — the "pixel" feeling is delivered by the grain layer instead,
+   so the light propagation reads clearly and uniformly through the chrome. */
+.hero-light-sweep-band {
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 250%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 100, 170, 0.90) 44%,        /* PINK leading — brighter */
+    rgba(255, 165, 80, 1.0) 49%,          /* GOLD edge — max */
+    rgba(255, 210, 110, 1.0) 50%,         /* GOLD center — max */
+    rgba(255, 165, 80, 1.0) 51%,          /* GOLD trailing */
+    rgba(80, 200, 255, 0.90) 56%,         /* CYAN trailing — brighter */
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  will-change: transform;
+  animation: bandSweepSlow 3.6s linear infinite;
+}
+
+/* SECONDARY SPARKLE BAND — smooth narrow white streak,
+   counter-direction so the two waves cross at irregular intervals. */
+.hero-light-sparkle-band {
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 250%;
+  height: 200%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 47%,
+    rgba(255, 120, 180, 0.70) 49%,          /* pink edge — brighter */
+    rgba(255, 200, 100, 0.95) 50%,          /* gold center — brighter */
+    rgba(120, 210, 255, 0.70) 51%,          /* cyan edge — brighter */
+    rgba(255, 255, 255, 0) 53%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  will-change: transform;
+  animation: bandSparkleSlow 6s linear infinite;
+  opacity: 0.75;
+}
+
+@keyframes bandSweepSlow {
+  0%   { transform: translate(-35%,  35%); }       /* start bottom-left */
+  100% { transform: translate( 35%, -35%); }       /* end top-right    */
+}
+
+@keyframes bandSparkleSlow {
+  0%   { transform: translate( 35%,  35%); }
+  100% { transform: translate(-35%, -35%); }
+}
+
+/* Chrome breathes brighter during sweep peaks — 6s cycle, gold-leaning halo. */
+@keyframes glowBurst {
+  0%, 100% {
+    filter:
+      saturate(1.7) contrast(1.2) brightness(1.18)
+      drop-shadow(0 0 14px rgba(255, 225, 170, 0.55))
+      drop-shadow(0 0 36px rgba(255, 220, 180, 0.32))
+      drop-shadow(0 0 80px rgba(255, 215, 170, 0.18));
+  }
+  50% {
+    filter:
+      saturate(1.95) contrast(1.28) brightness(1.30)
+      drop-shadow(0 0 20px rgba(255, 230, 180, 0.75))
+      drop-shadow(0 0 56px rgba(255, 220, 180, 0.50))
+      drop-shadow(0 0 120px rgba(255, 215, 170, 0.28));
+  }
+}
+
+/* Layer 3: subtle grain noise, also clipped to silhouette.
+   Tiny dot pattern via radial-gradient repeated. */
+/* Subtle, soft grain — texture only, no visible "stripes" or interference patterns.
+   Single layer (not two competing grids) so no moiré artifacts. */
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  mix-blend-mode: soft-light;          /* gentler than overlay — no harsh edges */
+  opacity: 0.45;
+  background-image:
+    radial-gradient(rgba(255, 240, 220, 0.32) 0.4px, transparent 0.6px);
+  background-size: 3px 3px;
+  -webkit-mask-image: url("/heptra-hero-hd.png");
+          mask-image: url("/heptra-hero-hd.png");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  animation: floatY 6s ease-in-out infinite, grainDrift 8s linear infinite;
+}
+
+/* Grain drifts smoothly (not stepped) — feels like surface micro-texture, not pixels. */
+@keyframes grainDrift {
+  0%   { background-position: 0 0; }
+  100% { background-position: 3px 3px; }
+}
+
+
+/* Animations */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-8px); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-img-base, .hero-heatmap {
+    animation: none !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────
+   /color/* variants — chrome logo tinted to brand color
+   + amplified diagonal sweep + grain.
+   All variants share these layer rules.
+   ───────────────────────────────────────────────────────── */
+
+/* Layer 0 — chrome base */
+.color-hero-base {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+  animation: floatY 6s ease-in-out infinite;
+  /* filter (halo) set inline per variant via style prop */
+}
+
+/* Layer 1 — tint overlay, masked to chrome silhouette */
+.color-hero-tint {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  mix-blend-mode: color;       /* keep luminosity (chrome shine), replace hue */
+  -webkit-mask-image: url("/heptra-hero-hd.png");
+          mask-image: url("/heptra-hero-hd.png");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  animation: floatY 6s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+/* Layer 2 — amplified diagonal light sweep */
+.color-hero-sweep {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+  mix-blend-mode: screen;
+  -webkit-mask-image: url("/heptra-hero-hd.png");
+          mask-image: url("/heptra-hero-hd.png");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  animation: floatY 6s ease-in-out infinite;
+}
+
+.color-hero-sweep-band {
+  position: absolute;
+  top: -60%;
+  left: -120%;
+  width: 280%;
+  height: 220%;
+  will-change: transform;
+  animation: bandSweepFast 3s linear infinite;
+  /* background gradient passed inline per variant */
+}
+
+/* Layer 3 — grain noise inside silhouette */
+.color-hero-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  opacity: 0.55;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.22) 0.5px, transparent 0.6px),
+    radial-gradient(rgba(0,0,0,0.30) 0.5px, transparent 0.6px);
+  background-size: 3px 3px, 5px 5px;
+  background-position: 0 0, 1px 1px;
+  -webkit-mask-image: url("/heptra-hero-hd.png");
+          mask-image: url("/heptra-hero-hd.png");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+          mask-position: center;
+  animation: floatY 6s ease-in-out infinite;
+}
+
+@keyframes bandSweepFast {
+  0%   { transform: translate(-35%, -35%); }
+  100% { transform: translate( 35%,  35%); }
 }
