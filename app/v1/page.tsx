@@ -57,7 +57,7 @@ export default function V1Page() {
             <span className="profile-capability">Лендинги</span>
             <span className="profile-capability">Платформы</span>
             <span className="profile-capability">Автоматизации</span>
-            <span className="profile-capability profile-capability-wildcard">+ ваш продукт</span>
+            <span className="profile-capability profile-capability-wildcard">ваш продукт под ключ</span>
           </div>
           <p className="profile-tagline">Любой продукт под ключ. От идеи к запуску.</p>
         </div>
