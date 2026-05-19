@@ -889,23 +889,22 @@ a:hover {
     align-self: flex-start;
     margin: 8px 0 0 calc(-25vw - 15px);
   }
-  /* Chrome a touch brighter than v4.7 — still under HEPTRA-eating threshold.
-     Bigger soft halos restore the smooth fade into dark bg (no sharp black edge). */
+  /* Mild chrome filters: iridescent feel without blowing out black HEPTRA letters. */
   .hero-img-base {
     opacity: 1;
     filter:
-      saturate(1.32)
-      contrast(1.05)
-      brightness(1.07)
-      drop-shadow(0 0 75px rgba(255, 215, 170, 0.55))
-      drop-shadow(0 0 180px rgba(255, 210, 160, 0.36))
-      drop-shadow(0 0 310px rgba(255, 200, 150, 0.22));
+      saturate(1.25)
+      contrast(1.04)
+      brightness(1.04)
+      drop-shadow(0 0 60px rgba(255, 215, 170, 0.50))
+      drop-shadow(0 0 140px rgba(255, 210, 160, 0.32))
+      drop-shadow(0 0 260px rgba(255, 200, 150, 0.18));
     animation: floatY 9s ease-in-out infinite;
   }
-  /* Sweep barely above v4.7 — keeps text safe. */
+  /* Light sweep ON but at reduced opacity — wave plays without eating text. */
   .hero-light-sweep {
     display: block;
-    opacity: 0.40;
+    opacity: 0.35;                  /* desktop is 0.78 — half-strength on mobile */
   }
   .hero-grain {
     display: block;
