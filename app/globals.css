@@ -889,18 +889,16 @@ a:hover {
     align-self: flex-start;
     margin: 8px 0 0 calc(-25vw - 15px);
   }
-  /* Same chrome filters as v4.7 — HEPTRA visible. But MUCH bigger halo:
-     ensures chrome edge melts gently into the dark background with no
-     visible sharp boundary, even on wide phones. */
+  /* Mild chrome filters: iridescent feel without blowing out black HEPTRA letters. */
   .hero-img-base {
     opacity: 1;
     filter:
       saturate(1.25)
       contrast(1.04)
       brightness(1.04)
-      drop-shadow(0 0 120px rgba(255, 215, 170, 0.55))
-      drop-shadow(0 0 240px rgba(255, 210, 160, 0.38))
-      drop-shadow(0 0 400px rgba(255, 200, 150, 0.25));
+      drop-shadow(0 0 60px rgba(255, 215, 170, 0.50))
+      drop-shadow(0 0 140px rgba(255, 210, 160, 0.32))
+      drop-shadow(0 0 260px rgba(255, 200, 150, 0.18));
     animation: floatY 9s ease-in-out infinite;
   }
   /* Light sweep ON but at reduced opacity — wave plays without eating text. */
