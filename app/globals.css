@@ -883,12 +883,14 @@ a:hover {
    ───────────────────────────────────────────────────────── */
 @media (max-width: 480px) {
   .hero-stage {
-    width: 100%;                    /* mobile: shrink to parent's content area (was 800px) */
-    max-width: 100%;
-    margin: 8px auto 0;             /* center within viewport, no overflow */
+    /* mobile: hero wider than viewport — extends past column edges,
+       body has overflow-x: clip so no horizontal scroll. HEPTRA wordmark + 7 read bigger. */
+    width: 115vw;
+    max-width: 115vw;
+    margin: 8px -7.5vw 0;           /* center within viewport with -7.5vw bleed each side */
   }
   .profile-card {
-    margin-top: -80px;              /* smaller overlap — hero is much smaller on mobile */
+    margin-top: -110px;              /* slightly bigger overlap because hero is now larger */
   }
   .splitform-main {
     padding: 16px 15px 64px;        /* tighter top/bottom padding on mobile */
