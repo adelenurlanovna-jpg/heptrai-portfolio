@@ -57,8 +57,9 @@ export default function V4Page() {
             <span className="profile-capability">Лендинги</span>
             <span className="profile-capability">Платформы</span>
             <span className="profile-capability">Автоматизации</span>
+            <span className="profile-capability profile-capability-wildcard">+ что угодно</span>
           </div>
-          <p className="profile-tagline">От идеи к запуску. Под ключ.</p>
+          <p className="profile-tagline">Любой продукт под ключ. От идеи к запуску.</p>
         </div>
       </motion.section>
 

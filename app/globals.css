@@ -381,6 +381,20 @@ a:hover {
   color: #ffffff;
 }
 
+/* Wildcard pill — dashed border signals "anything else, not exhaustive" */
+.profile-capability-wildcard {
+  border-style: dashed;
+  border-color: rgba(255, 255, 255, 0.18);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.profile-capability-wildcard:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+
 /* Tagline — promise after the pills list */
 .profile-tagline {
   font-family: var(--font-ibm-plex), monospace;
