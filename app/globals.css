@@ -315,11 +315,11 @@ a:hover {
 
 .profile-handle {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 9px;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.14em;
-  margin-top: 1px;
+  font-size: 12px;                             /* was 9px — more presence under the name */
+  font-weight: 700;                            /* was 500 — bolder */
+  color: rgba(255, 255, 255, 0.72);            /* was 0.5 — brighter */
+  letter-spacing: 0.12em;
+  margin-top: 2px;
 }
 
 .profile-tag {
@@ -363,21 +363,21 @@ a:hover {
 
 .profile-capability {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 9px;
-  font-weight: 600;
-  color: #FF64AA;                              /* hot pink — echoes the HEPTRA chrome pink */
-  padding: 3px 7px;
+  font-size: 10px;                             /* +1px for legibility */
+  font-weight: 700;                            /* bolder so text reads cleanly */
+  color: #ffffff;
+  padding: 3px 8px;
   border-radius: 999px;
-  background: rgba(255, 100, 170, 0.08);
-  border: 1px solid rgba(255, 100, 170, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.20);
   white-space: nowrap;
   letter-spacing: 0.01em;
   transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
 
 .profile-capability:hover {
-  background: rgba(255, 100, 170, 0.16);
-  border-color: rgba(255, 100, 170, 0.55);
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.32);
   color: #ffffff;
 }
 
