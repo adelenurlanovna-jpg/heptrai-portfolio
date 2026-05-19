@@ -889,22 +889,23 @@ a:hover {
     align-self: flex-start;
     margin: 8px 0 0 calc(-32.5vw - 15px);
   }
-  /* Brighter chrome filters with stronger glow + halo, while keeping HEPTRA legible. */
+  /* Mild chrome — iOS Safari threshold. Above brightness 1.05 / sat 1.30 the
+     black HEPTRA text starts washing out. Keep below that. */
   .hero-img-base {
     opacity: 1;
     filter:
-      saturate(1.45)
-      contrast(1.08)
-      brightness(1.10)
-      drop-shadow(0 0 70px rgba(255, 215, 170, 0.58))
-      drop-shadow(0 0 170px rgba(255, 210, 160, 0.38))
-      drop-shadow(0 0 300px rgba(255, 200, 150, 0.22));
+      saturate(1.28)
+      contrast(1.05)
+      brightness(1.05)
+      drop-shadow(0 0 70px rgba(255, 215, 170, 0.55))
+      drop-shadow(0 0 160px rgba(255, 210, 160, 0.35))
+      drop-shadow(0 0 290px rgba(255, 200, 150, 0.20));
     animation: floatY 9s ease-in-out infinite;
   }
-  /* Light sweep stronger now — but still mild so HEPTRA letters stay readable. */
+  /* Light sweep gentle — stronger eats text. */
   .hero-light-sweep {
     display: block;
-    opacity: 0.50;                  /* desktop is 0.78 — ~⅔ strength on mobile */
+    opacity: 0.38;
   }
   .hero-grain {
     display: block;
