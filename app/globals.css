@@ -91,30 +91,30 @@ a:hover {
   height: 100%;
   object-fit: contain;
   z-index: 1;
-  opacity: 0.93;                 /* v2.6: balanced brightness for 800px hero */
+  opacity: 0.98;                 /* v3.9: even brighter — chrome dominates the stage */
   animation: floatY 9s ease-in-out infinite;
-  /* v2.6: halo proportional to 800px hero */
+  /* v3.9: punchier chrome + warmer halo */
   filter:
-    saturate(1.58)
-    contrast(1.15)
-    brightness(1.13)
-    blur(0.35px)
-    drop-shadow(0 0 58px rgba(255, 215, 170, 0.40))
-    drop-shadow(0 0 150px rgba(255, 210, 160, 0.24))
-    drop-shadow(0 0 250px rgba(255, 200, 150, 0.13));
+    saturate(1.75)
+    contrast(1.20)
+    brightness(1.20)
+    blur(0.30px)
+    drop-shadow(0 0 70px rgba(255, 215, 170, 0.55))
+    drop-shadow(0 0 180px rgba(255, 210, 160, 0.32))
+    drop-shadow(0 0 300px rgba(255, 200, 150, 0.18));
 }
 
 /* Layer 2: animated light sweep — masked to chrome silhouette.
    screen blend — adds light without burn-out at peaks. */
 .hero-light-sweep {
-  /* v2.2: re-enabled, dimmed via opacity below — atmospheric, not aggressive */
+  /* v3.9: brighter sweep — wave reads more clearly without screaming */
   position: absolute;
   inset: 0;
   z-index: 2;
   pointer-events: none;
   overflow: hidden;
   mix-blend-mode: screen;
-  opacity: 0.55;                 /* v2.2: dim the whole sweep layer so it whispers, doesn't shout */
+  opacity: 0.78;                 /* v3.9: was 0.55 — chrome wave more pronounced */
   -webkit-mask-image: url("/heptra-hero-hd.png");
           mask-image: url("/heptra-hero-hd.png");
   -webkit-mask-size: contain;
@@ -366,21 +366,22 @@ a:hover {
 
 .profile-capability {
   font-family: var(--font-jetbrains), monospace;
-  font-size: 10px;                             /* +1px for legibility */
-  font-weight: 700;                            /* bolder so text reads cleanly */
+  font-size: 10px;
+  font-weight: 800;                            /* heavier weight — Ctrl+B effect */
   color: #ffffff;
-  padding: 3px 8px;
+  padding: 3px 9px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.20);
+  background: rgba(255, 145, 112, 0.22);       /* coral fill — warm, visible */
+  border: 1px solid rgba(255, 145, 112, 0.55); /* coral border — clearer outline */
   white-space: nowrap;
   letter-spacing: 0.01em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);  /* tiny shadow so white text stays crisp on coral */
   transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
 
 .profile-capability:hover {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.32);
+  background: rgba(255, 145, 112, 0.36);
+  border-color: rgba(255, 145, 112, 0.75);
   color: #ffffff;
 }
 
