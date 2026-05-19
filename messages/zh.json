@@ -1,0 +1,55 @@
+{
+  "profile": {
+    "name": "Adele",
+    "handle": "HΞPTRΛI"
+  },
+  "pills": {
+    "aiAgents": "AI 智能体",
+    "bots": "机器人",
+    "landings": "落地页",
+    "platforms": "平台",
+    "automations": "自动化",
+    "wildcard": "您的产品交钥匙"
+  },
+  "tagline": "任何产品交钥匙。从概念到上线。",
+  "tgCta": "我的 Telegram 频道",
+  "sections": {
+    "studio": "我的工作室",
+    "projects": "项目与案例"
+  },
+  "studio": {
+    "title": "HΞPTRΛI Studio",
+    "subtitle": "独立产品工作室 — 从概念到上线"
+  },
+  "projects": {
+    "landingProtocol": {
+      "title": "Landing Protocol",
+      "subtitle": "交钥匙落地页 · 2025"
+    },
+    "qosvanta": {
+      "title": "QOSVANTA",
+      "subtitle": "支付解决方案聚合器 · 2024"
+    },
+    "onyx": {
+      "title": "ONYX",
+      "subtitle": "高端落地页 · 2024"
+    }
+  },
+  "social": {
+    "website": "网站",
+    "twitter": "X / Twitter",
+    "telegram": "Telegram",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": {
+    "copyright": "© 2026",
+    "domain": "heptrai.xyz"
+  },
+  "locale": {
+    "en": "English",
+    "ru": "Русский",
+    "es": "Español",
+    "zh": "中文"
+  }
+}

@@ -894,3 +894,108 @@ a:hover {
     padding: 16px 15px 64px;        /* tighter top/bottom padding on mobile */
   }
 }
+
+/* ─────────────────────────────────────────────────────────
+   LOCALE SWITCHER — top-right dropdown (RU/EN/ES/ZH)
+   ───────────────────────────────────────────────────────── */
+.locale-switcher {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 100;
+  font-family: var(--font-jetbrains), monospace;
+}
+
+.locale-switcher-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+}
+
+.locale-switcher-button:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}
+
+.locale-switcher-flag {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.locale-switcher-code {
+  font-weight: 700;
+}
+
+.locale-switcher-caret {
+  font-size: 9px;
+  opacity: 0.6;
+  margin-left: 1px;
+}
+
+.locale-switcher-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 140px;
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+  background: rgba(15, 15, 20, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+          backdrop-filter: blur(20px) saturate(150%);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+}
+
+.locale-switcher-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 7px 10px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.14s ease, color 0.14s ease;
+}
+
+.locale-switcher-option:hover {
+  background: rgba(0, 255, 209, 0.10);
+  color: var(--accent);
+}
+
+.locale-switcher-option.is-active {
+  background: rgba(0, 255, 209, 0.14);
+  color: var(--accent);
+}
+
+.locale-switcher-name {
+  flex: 1;
+}
+
+@media (max-width: 480px) {
+  .locale-switcher {
+    top: 12px;
+    right: 12px;
+  }
+}

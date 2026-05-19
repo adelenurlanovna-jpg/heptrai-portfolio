@@ -1,0 +1,55 @@
+{
+  "profile": {
+    "name": "Adele",
+    "handle": "HΞPTRΛI"
+  },
+  "pills": {
+    "aiAgents": "AI-агенты",
+    "bots": "Боты",
+    "landings": "Лендинги",
+    "platforms": "Платформы",
+    "automations": "Автоматизации",
+    "wildcard": "ваш продукт под ключ"
+  },
+  "tagline": "Любой продукт под ключ. От идеи к запуску.",
+  "tgCta": "Мой Telegram канал",
+  "sections": {
+    "studio": "Моя студия",
+    "projects": "Проекты и кейсы"
+  },
+  "studio": {
+    "title": "HΞPTRΛI Studio",
+    "subtitle": "Solo Product Studio — от идеи к запуску"
+  },
+  "projects": {
+    "landingProtocol": {
+      "title": "Landing Protocol",
+      "subtitle": "Лендинг под ключ · 2025"
+    },
+    "qosvanta": {
+      "title": "QOSVANTA",
+      "subtitle": "Агрегатор платёжных решений · 2024"
+    },
+    "onyx": {
+      "title": "ONYX",
+      "subtitle": "Премиум-лендинг · 2024"
+    }
+  },
+  "social": {
+    "website": "Сайт",
+    "twitter": "X / Twitter",
+    "telegram": "Telegram",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": {
+    "copyright": "© 2026",
+    "domain": "heptrai.xyz"
+  },
+  "locale": {
+    "en": "English",
+    "ru": "Русский",
+    "es": "Español",
+    "zh": "中文"
+  }
+}
