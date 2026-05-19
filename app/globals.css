@@ -889,17 +889,33 @@ a:hover {
     align-self: flex-start;
     margin: 8px 0 0 calc(-25vw - 15px);
   }
-  /* Mild chrome filters: iridescent feel without blowing out black HEPTRA letters. */
+  /* v4.7 chrome filters (HEPTRA legible) + bigger soft halo to dissolve
+     the chrome silhouette into the dark bg — no more sharp edge above HEPTRA cap. */
   .hero-img-base {
     opacity: 1;
     filter:
       saturate(1.25)
       contrast(1.04)
       brightness(1.04)
-      drop-shadow(0 0 60px rgba(255, 215, 170, 0.50))
-      drop-shadow(0 0 140px rgba(255, 210, 160, 0.32))
-      drop-shadow(0 0 260px rgba(255, 200, 150, 0.18));
+      drop-shadow(0 0 100px rgba(255, 215, 170, 0.55))
+      drop-shadow(0 0 220px rgba(255, 210, 160, 0.40))
+      drop-shadow(0 0 380px rgba(255, 200, 150, 0.25));
     animation: floatY 9s ease-in-out infinite;
+  }
+  /* Extra radial glow BEHIND the hero stage — provides ambient warm light
+     across the whole area so chrome edges don't appear "cut out" against pure black. */
+  .hero-stage::before {
+    content: "";
+    position: absolute;
+    inset: -60% -30% -30% -30%;
+    z-index: -1;
+    background: radial-gradient(
+      ellipse at 50% 45%,
+      rgba(255, 215, 170, 0.10) 0%,
+      rgba(255, 200, 150, 0.05) 30%,
+      transparent 65%
+    );
+    pointer-events: none;
   }
   /* Light sweep ON but at reduced opacity — wave plays without eating text. */
   .hero-light-sweep {
