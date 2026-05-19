@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
-// Default Next.js favicon — appears in browser tab, bookmarks, history.
-// HΛI monogram: H white, Λ cyan #00FFD1, I white. Dark background.
+// Favicon — single Λ mark (Stripe/Vercel-style minimalism).
+// Crisp brand cyan glyph on near-black, readable at 16×16 to 32×32.
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
@@ -16,17 +16,14 @@ export default function Icon() {
           alignItems: "center",
           justifyContent: "center",
           background: "#0a0a0a",
+          color: "#00FFD1",
           fontFamily: '"JetBrains Mono", monospace',
-          fontWeight: 800,
-          fontSize: 18,
-          letterSpacing: "-0.06em",
+          fontWeight: 900,
+          fontSize: 28,
           lineHeight: 1,
-          color: "#ffffff",
         }}
       >
-        <span>H</span>
-        <span style={{ color: "#00FFD1" }}>Λ</span>
-        <span>I</span>
+        Λ
       </div>
     ),
     { ...size },

@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
-// Apple touch icon — when user adds the site to iPhone/iPad home screen.
-// Larger 180×180, more breathing room, rounded chrome-tinted background.
+// Apple touch icon — single Λ mark on a subtle chrome-tinted gradient.
+// Larger 180×180 — same design language as the 32×32 favicon, just more room.
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
@@ -17,17 +17,14 @@ export default function AppleIcon() {
           justifyContent: "center",
           background:
             "linear-gradient(135deg, #1a0a14 0%, #0a0a0a 50%, #001a16 100%)",
+          color: "#00FFD1",
           fontFamily: '"JetBrains Mono", monospace',
           fontWeight: 900,
-          fontSize: 90,
-          letterSpacing: "-0.08em",
+          fontSize: 140,
           lineHeight: 1,
-          color: "#ffffff",
         }}
       >
-        <span>H</span>
-        <span style={{ color: "#00FFD1" }}>Λ</span>
-        <span>I</span>
+        Λ
       </div>
     ),
     { ...size },
