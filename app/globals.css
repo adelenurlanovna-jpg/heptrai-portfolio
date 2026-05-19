@@ -381,18 +381,20 @@ a:hover {
   color: #ffffff;
 }
 
-/* Wildcard pill — dashed border signals "anything else, not exhaustive" */
+/* Wildcard pill — cyan-accented dashed invitation.
+   Visually distinct: this isn't a category, it's a CTA. */
 .profile-capability-wildcard {
   border-style: dashed;
-  border-color: rgba(255, 255, 255, 0.18);
-  background: transparent;
-  color: rgba(255, 255, 255, 0.72);
+  border-color: rgba(0, 255, 209, 0.45);
+  background: rgba(0, 255, 209, 0.06);
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .profile-capability-wildcard:hover {
   border-color: var(--accent);
-  color: var(--accent);
-  background: transparent;
+  background: rgba(0, 255, 209, 0.14);
+  color: #ffffff;
 }
 
 /* Tagline — promise after the pills list */
