@@ -75,7 +75,6 @@ a:hover {
 .hero-stage {
   position: relative;
   width: 800px;                  /* v2.6: middle ground — 2× splitform, half-way between 600 and 1100 */
-  max-width: 100%;               /* mobile cap: never wider than parent's content area */
   aspect-ratio: 816 / 462;
   margin: 16px -200px 0;         /* -200px per side so 800px stage centers over 400px column */
   z-index: -1;
@@ -883,6 +882,8 @@ a:hover {
    ───────────────────────────────────────────────────────── */
 @media (max-width: 480px) {
   .hero-stage {
+    width: 100%;                    /* mobile: shrink to parent's content area (was 800px) */
+    max-width: 100%;
     margin: 8px auto 0;             /* center within viewport, no overflow */
   }
   .profile-card {
