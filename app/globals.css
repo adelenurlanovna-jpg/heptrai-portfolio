@@ -433,6 +433,7 @@ a:hover {
    TELEGRAM CTA — big white pill button (primary action)
    ───────────────────────────────────────────────────────── */
 .tg-cta {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -448,8 +449,33 @@ a:hover {
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.01em;
+  overflow: hidden;
+  isolation: isolate;
   transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
+
+/* Chrome sweep over the white button — colored tint via multiply
+   so iridescent pink/gold/cyan paints across the white background. */
+.tg-cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 28%,
+    rgba(255, 100, 170, 0.85) 44%,    /* pink — stronger because white absorbs */
+    rgba(255, 200, 100, 0.95) 50%,    /* gold */
+    rgba(120, 210, 255, 0.85) 56%,    /* cyan */
+    transparent 72%
+  );
+  transform: translateX(-110%);
+  mix-blend-mode: multiply;
+  animation: card-chrome-sweep 9s ease-in-out infinite;
+}
+
+.tg-cta > * { position: relative; z-index: 1; }
 
 .tg-cta:hover {
   color: #0a0a0a;
@@ -482,6 +508,7 @@ a:hover {
    ENTITY CARD — studio / project card with icon + title + arrow
    ───────────────────────────────────────────────────────── */
 .entity-card {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -493,7 +520,45 @@ a:hover {
   border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 14px;
   color: #ffffff;
+  overflow: hidden;                              /* clip the sweep inside the rounded card */
+  isolation: isolate;
   transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+/* Chrome light sweep — same iridescent palette as the HEPTRA logo,
+   but dimmer and slower so cards "breathe" without distracting. */
+.entity-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 28%,
+    rgba(255, 100, 170, 0.12) 44%,    /* pink */
+    rgba(255, 200, 100, 0.18) 50%,    /* gold */
+    rgba(120, 210, 255, 0.12) 56%,    /* cyan */
+    transparent 72%
+  );
+  transform: translateX(-110%);
+  mix-blend-mode: screen;
+  animation: card-chrome-sweep 9s ease-in-out infinite;
+}
+
+/* Stagger sweeps so cards don't pulse in lockstep */
+.entity-card:nth-of-type(2)::before { animation-delay: 1.8s; }
+.entity-card:nth-of-type(3)::before { animation-delay: 3.6s; }
+.entity-card:nth-of-type(4)::before { animation-delay: 5.4s; }
+.entity-card:nth-of-type(5)::before { animation-delay: 7.2s; }
+
+/* Bring inner content above the sweep so it stays readable */
+.entity-card > * { position: relative; z-index: 1; }
+
+@keyframes card-chrome-sweep {
+  0%   { transform: translateX(-110%); }
+  50%  { transform: translateX(110%); }
+  100% { transform: translateX(110%); }
 }
 
 .entity-card:hover {
