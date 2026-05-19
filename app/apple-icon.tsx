@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
-// Apple touch icon — single Λ mark on a subtle chrome-tinted gradient.
-// Larger 180×180 — same design language as the 32×32 favicon, just more room.
+// Apple touch icon — "7AI" mark on transparent background.
+// iOS will composite it onto the user's chosen home screen wallpaper.
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
@@ -15,16 +15,16 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background:
-            "linear-gradient(135deg, #1a0a14 0%, #0a0a0a 50%, #001a16 100%)",
+          background: "transparent",
           color: "#00FFD1",
           fontFamily: '"JetBrains Mono", monospace',
           fontWeight: 900,
-          fontSize: 140,
+          fontSize: 90,
+          letterSpacing: "-0.04em",
           lineHeight: 1,
         }}
       >
-        Λ
+        7AI
       </div>
     ),
     { ...size },

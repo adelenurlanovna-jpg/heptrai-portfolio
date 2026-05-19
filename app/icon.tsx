@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
-// Favicon — single Λ mark (Stripe/Vercel-style minimalism).
-// Crisp brand cyan glyph on near-black, readable at 16×16 to 32×32.
+// Favicon — "7AI" mark on transparent background (no black square).
+// Adapts to whatever browser tab color renders behind it.
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
@@ -15,15 +15,16 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#0a0a0a",
+          background: "transparent",
           color: "#00FFD1",
           fontFamily: '"JetBrains Mono", monospace',
           fontWeight: 900,
-          fontSize: 28,
+          fontSize: 16,
+          letterSpacing: "-0.04em",
           lineHeight: 1,
         }}
       >
-        Λ
+        7AI
       </div>
     ),
     { ...size },
