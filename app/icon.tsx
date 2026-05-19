@@ -1,11 +1,15 @@
 import { ImageResponse } from "next/og";
 
-// Favicon — "7Λ" mark on transparent background, black text.
-// 7 (hepta — seven) + Λ (Greek capital lambda, brand letter from HΞPTRΛI).
+// Favicon — "7Λ" mark in Orbitron Black (futuristic geometric sans).
+// 7 (hepta — seven) + Λ (Greek capital lambda from HΞPTRΛI).
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
 
-export default function Icon() {
+export default async function Icon() {
+  const fontData = await fetch(
+    "https://github.com/google/fonts/raw/main/ofl/audiowide/Audiowide-Regular.ttf",
+  ).then((res) => res.arrayBuffer());
+
   return new ImageResponse(
     (
       <div
@@ -17,16 +21,20 @@ export default function Icon() {
           justifyContent: "center",
           background: "transparent",
           color: "#000000",
-          fontFamily: '"JetBrains Mono", monospace',
-          fontWeight: 900,
-          fontSize: 24,
-          letterSpacing: "-0.04em",
+          fontFamily: "Audiowide",
+          fontSize: 22,
+          letterSpacing: "-0.02em",
           lineHeight: 1,
         }}
       >
         7Λ
       </div>
     ),
-    { ...size },
+    {
+      ...size,
+      fonts: [
+        { name: "Audiowide", data: fontData, style: "normal", weight: 400 },
+      ],
+    },
   );
 }

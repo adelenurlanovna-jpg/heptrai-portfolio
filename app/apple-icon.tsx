@@ -1,10 +1,14 @@
 import { ImageResponse } from "next/og";
 
-// Apple touch icon — "7Λ" mark on transparent background, black text.
+// Apple touch icon — "7Λ" in Orbitron Black, transparent bg, black text.
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
-export default function AppleIcon() {
+export default async function AppleIcon() {
+  const fontData = await fetch(
+    "https://github.com/google/fonts/raw/main/ofl/audiowide/Audiowide-Regular.ttf",
+  ).then((res) => res.arrayBuffer());
+
   return new ImageResponse(
     (
       <div
@@ -16,16 +20,20 @@ export default function AppleIcon() {
           justifyContent: "center",
           background: "transparent",
           color: "#000000",
-          fontFamily: '"JetBrains Mono", monospace',
-          fontWeight: 900,
+          fontFamily: "Audiowide",
           fontSize: 130,
-          letterSpacing: "-0.04em",
+          letterSpacing: "-0.02em",
           lineHeight: 1,
         }}
       >
         7Λ
       </div>
     ),
-    { ...size },
+    {
+      ...size,
+      fonts: [
+        { name: "Audiowide", data: fontData, style: "normal", weight: 400 },
+      ],
+    },
   );
 }
