@@ -886,13 +886,25 @@ a:hover {
     /* mobile: hero wider than viewport, perfectly centered in VIEWPORT (not in parent
        column). Compensates for parent's 15px padding so the 7's HEPTRA cap is centered
        on every phone — from iPhone SE 320 to iPhone Pro Max 430. */
-    width: 140vw;
-    max-width: 140vw;
+    width: 130vw;
+    max-width: 130vw;
     align-self: flex-start;
-    margin: 8px 0 0 calc(-20vw - 15px);
+    margin: 8px 0 0 calc(-15vw - 15px);
+  }
+  /* iOS Safari over-saturates chrome filters → black HEPTRA letters disappear.
+     Toned-down filters on mobile keep iridescent feel but preserve text legibility. */
+  .hero-img-base {
+    filter:
+      saturate(1.35)
+      contrast(1.05)
+      brightness(1.02)
+      blur(0px)
+      drop-shadow(0 0 40px rgba(255, 215, 170, 0.40))
+      drop-shadow(0 0 100px rgba(255, 210, 160, 0.22))
+      drop-shadow(0 0 180px rgba(255, 200, 150, 0.12));
   }
   .profile-card {
-    margin-top: -140px;              /* deeper overlap because hero is significantly larger */
+    margin-top: -120px;              /* slightly less overlap since hero is now 130vw */
   }
   .splitform-main {
     padding: 16px 15px 64px;        /* tighter top/bottom padding on mobile */
