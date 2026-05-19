@@ -350,6 +350,48 @@ a:hover {
 }
 
 /* ─────────────────────────────────────────────────────────
+   PROFILE CAPABILITIES — pills chain (full-cycle positioning).
+   5 mini-pills: AI-агенты · Боты · Лендинги · Платформы · Автоматизации
+   Wraps to 2 lines within the 280px body column.
+   ───────────────────────────────────────────────────────── */
+.profile-capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 4px 0 6px;
+}
+
+.profile-capability {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 9px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.profile-capability:hover {
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+/* Tagline — promise after the pills list */
+.profile-tagline {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 9px;
+  font-style: italic;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 2px 0 0;
+}
+
+/* ─────────────────────────────────────────────────────────
    V1 BREATHING CARD — sits BELOW the seven, no overlap.
    Clean composition: hero → air → passport.
    ───────────────────────────────────────────────────────── */

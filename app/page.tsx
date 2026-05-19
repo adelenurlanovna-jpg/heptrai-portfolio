@@ -63,11 +63,15 @@ export default function Home() {
             <span className="profile-handle">HΞPTRΛI</span>
           </div>
 
-          <span className="profile-tag">AI, Web3 &amp; Vibecoding</span>
+          <div className="profile-capabilities" aria-label="Capabilities">
+            <span className="profile-capability">AI-агенты</span>
+            <span className="profile-capability">Боты</span>
+            <span className="profile-capability">Лендинги</span>
+            <span className="profile-capability">Платформы</span>
+            <span className="profile-capability">Автоматизации</span>
+          </div>
 
-          <p className="profile-bio">
-            Делаем полный цикл запуска продуктов в Web3, AI и тех. направлениях
-          </p>
+          <p className="profile-tagline">От идеи к запуску. Под ключ.</p>
         </div>
       </motion.section>
     </main>

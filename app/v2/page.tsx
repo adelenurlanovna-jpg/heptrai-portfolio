@@ -50,10 +50,14 @@ export default function V2Page() {
             <h1 className="profile-name">Adele</h1>
             <span className="profile-handle">HΞPTRΛI</span>
           </div>
-          <span className="profile-tag">AI, Web3 &amp; Vibecoding</span>
-          <p className="profile-bio">
-            Делаем полный цикл запуска продуктов в Web3, AI и тех. направлениях
-          </p>
+          <div className="profile-capabilities" aria-label="Capabilities">
+            <span className="profile-capability">AI-агенты</span>
+            <span className="profile-capability">Боты</span>
+            <span className="profile-capability">Лендинги</span>
+            <span className="profile-capability">Платформы</span>
+            <span className="profile-capability">Автоматизации</span>
+          </div>
+          <p className="profile-tagline">От идеи к запуску. Под ключ.</p>
         </div>
       </motion.section>
 
