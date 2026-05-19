@@ -516,13 +516,40 @@ a:hover {
   max-width: 370px;
   padding: 10px 14px 10px 10px;
   margin: 0 auto 8px;
-  background: rgba(255, 255, 255, 0.035);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  /* Static iridescent base — pink / gold / cyan tint, like the HEPTRA chrome */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 100, 170, 0.25) 0%,
+    rgba(255, 200, 100, 0.20) 50%,
+    rgba(120, 210, 255, 0.28) 100%
+  );
+  border: 1px solid rgba(255, 180, 200, 0.32);   /* warm iridescent border */
   border-radius: 14px;
   color: #ffffff;
   overflow: hidden;                              /* clip the sweep inside the rounded card */
   isolation: isolate;
-  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+  animation: card-chrome-shift 14s ease-in-out infinite;
+  transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+/* Slow drift of the base gradient — cards inhale/exhale chrome tones */
+@keyframes card-chrome-shift {
+  0%, 100% {
+    background: linear-gradient(
+      135deg,
+      rgba(255, 100, 170, 0.45) 0%,
+      rgba(255, 200, 100, 0.38) 50%,
+      rgba(120, 210, 255, 0.48) 100%
+    );
+  }
+  50% {
+    background: linear-gradient(
+      135deg,
+      rgba(120, 210, 255, 0.48) 0%,
+      rgba(255, 200, 100, 0.38) 50%,
+      rgba(255, 100, 170, 0.45) 100%
+    );
+  }
 }
 
 /* Chrome light sweep — same iridescent palette as the HEPTRA logo,
@@ -562,8 +589,8 @@ a:hover {
 }
 
 .entity-card:hover {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 255, 255, 0.14);
+  filter: brightness(1.15) saturate(1.25);       /* intensify chrome on hover (preserves animation) */
+  border-color: rgba(255, 200, 220, 0.40);
   color: #ffffff;
   transform: translateY(-1px);
 }
