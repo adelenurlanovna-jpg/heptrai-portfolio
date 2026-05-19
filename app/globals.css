@@ -891,15 +891,16 @@ a:hover {
     align-self: flex-start;
     margin: 8px 0 0 calc(-15vw - 15px);
   }
-  /* iOS Safari renders heavy chrome filters/blends so brightly that
-     black HEPTRA text inside the chrome cap becomes invisible.
-     On mobile we strip filters down to BASE — image renders as-is.
-     Plus we disable the screen-blend light sweep that adds extra glow. */
+  /* iOS Safari over-blends chrome filters → black HEPTRA letters disappear.
+     On mobile we strip color filters (saturate/contrast/brightness/blur) but
+     KEEP wide soft halo drop-shadows so the chrome edges fade gently into black
+     instead of cutting sharply. Halos sit OUTSIDE the silhouette → don't hide text. */
   .hero-img-base {
     opacity: 1;
     filter:
-      drop-shadow(0 0 30px rgba(255, 215, 170, 0.30))
-      drop-shadow(0 0 80px rgba(255, 210, 160, 0.18));
+      drop-shadow(0 0 60px rgba(255, 215, 170, 0.50))
+      drop-shadow(0 0 140px rgba(255, 210, 160, 0.32))
+      drop-shadow(0 0 260px rgba(255, 200, 150, 0.18));
     animation: floatY 9s ease-in-out infinite;
   }
   .hero-light-sweep {
