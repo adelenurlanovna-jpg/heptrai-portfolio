@@ -883,35 +883,35 @@ a:hover {
    ───────────────────────────────────────────────────────── */
 @media (max-width: 480px) {
   .hero-stage {
-    /* mobile: hero bigger (150vw) so visual proportion matches desktop. */
-    width: 150vw;
-    max-width: 150vw;
+    /* mobile: bigger hero (165vw) — dominates the field even more, near-desktop scale. */
+    width: 165vw;
+    max-width: 165vw;
     align-self: flex-start;
-    margin: 8px 0 0 calc(-25vw - 15px);
+    margin: 8px 0 0 calc(-32.5vw - 15px);
   }
-  /* Mild chrome filters: iridescent feel without blowing out black HEPTRA letters. */
+  /* Brighter chrome filters with stronger glow + halo, while keeping HEPTRA legible. */
   .hero-img-base {
     opacity: 1;
     filter:
-      saturate(1.25)
-      contrast(1.04)
-      brightness(1.04)
-      drop-shadow(0 0 60px rgba(255, 215, 170, 0.50))
-      drop-shadow(0 0 140px rgba(255, 210, 160, 0.32))
-      drop-shadow(0 0 260px rgba(255, 200, 150, 0.18));
+      saturate(1.45)
+      contrast(1.08)
+      brightness(1.10)
+      drop-shadow(0 0 70px rgba(255, 215, 170, 0.58))
+      drop-shadow(0 0 170px rgba(255, 210, 160, 0.38))
+      drop-shadow(0 0 300px rgba(255, 200, 150, 0.22));
     animation: floatY 9s ease-in-out infinite;
   }
-  /* Light sweep ON but at reduced opacity — wave plays without eating text. */
+  /* Light sweep stronger now — but still mild so HEPTRA letters stay readable. */
   .hero-light-sweep {
     display: block;
-    opacity: 0.35;                  /* desktop is 0.78 — half-strength on mobile */
+    opacity: 0.50;                  /* desktop is 0.78 — ~⅔ strength on mobile */
   }
   .hero-grain {
     display: block;
-    opacity: 0.20;                  /* desktop is 0.45 — softer */
+    opacity: 0.25;
   }
   .profile-card {
-    margin-top: -200px;              /* deep overlap like desktop's -300px proportionally */
+    margin-top: -240px;              /* a bit higher than v4.7's -200, but not at cap */
   }
   .splitform-main {
     padding: 16px 15px 64px;        /* tighter top/bottom padding on mobile */
