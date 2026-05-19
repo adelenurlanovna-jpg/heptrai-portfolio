@@ -1,7 +1,6 @@
 import { ImageResponse } from "next/og";
 
-// Apple touch icon — "7AI" mark on transparent background.
-// iOS will composite it onto the user's chosen home screen wallpaper.
+// Apple touch icon — "7Λ" mark on transparent background, black text.
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
@@ -16,15 +15,15 @@ export default function AppleIcon() {
           alignItems: "center",
           justifyContent: "center",
           background: "transparent",
-          color: "#00FFD1",
+          color: "#000000",
           fontFamily: '"JetBrains Mono", monospace',
           fontWeight: 900,
-          fontSize: 90,
+          fontSize: 130,
           letterSpacing: "-0.04em",
           lineHeight: 1,
         }}
       >
-        7AI
+        7Λ
       </div>
     ),
     { ...size },
