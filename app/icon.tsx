@@ -7,7 +7,7 @@ export const contentType = "image/png";
 
 export default async function Icon() {
   const fontData = await fetch(
-    "https://github.com/google/fonts/raw/main/ofl/audiowide/Audiowide-Regular.ttf",
+    "https://github.com/google/fonts/raw/main/ofl/russoone/RussoOne-Regular.ttf",
   ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
@@ -21,8 +21,8 @@ export default async function Icon() {
           justifyContent: "center",
           background: "transparent",
           color: "#000000",
-          fontFamily: "Audiowide",
-          fontSize: 22,
+          fontFamily: "Russo One",
+          fontSize: 24,
           letterSpacing: "-0.02em",
           lineHeight: 1,
         }}
@@ -33,7 +33,7 @@ export default async function Icon() {
     {
       ...size,
       fonts: [
-        { name: "Audiowide", data: fontData, style: "normal", weight: 400 },
+        { name: "Russo One", data: fontData, style: "normal", weight: 400 },
       ],
     },
   );
