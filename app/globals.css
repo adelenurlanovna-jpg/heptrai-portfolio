@@ -891,17 +891,22 @@ a:hover {
     align-self: flex-start;
     margin: 8px 0 0 calc(-15vw - 15px);
   }
-  /* iOS Safari over-saturates chrome filters → black HEPTRA letters disappear.
-     Toned-down filters on mobile keep iridescent feel but preserve text legibility. */
+  /* iOS Safari renders heavy chrome filters/blends so brightly that
+     black HEPTRA text inside the chrome cap becomes invisible.
+     On mobile we strip filters down to BASE — image renders as-is.
+     Plus we disable the screen-blend light sweep that adds extra glow. */
   .hero-img-base {
+    opacity: 1;
     filter:
-      saturate(1.35)
-      contrast(1.05)
-      brightness(1.02)
-      blur(0px)
-      drop-shadow(0 0 40px rgba(255, 215, 170, 0.40))
-      drop-shadow(0 0 100px rgba(255, 210, 160, 0.22))
-      drop-shadow(0 0 180px rgba(255, 200, 150, 0.12));
+      drop-shadow(0 0 30px rgba(255, 215, 170, 0.30))
+      drop-shadow(0 0 80px rgba(255, 210, 160, 0.18));
+    animation: floatY 9s ease-in-out infinite;
+  }
+  .hero-light-sweep {
+    display: none;                  /* kill animated screen-blend sweep on mobile — it eats text */
+  }
+  .hero-grain {
+    display: none;                  /* grain overlay also adds noise to small text */
   }
   .profile-card {
     margin-top: -120px;              /* slightly less overlap since hero is now 130vw */
