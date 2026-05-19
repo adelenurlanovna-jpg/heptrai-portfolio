@@ -883,11 +883,13 @@ a:hover {
    ───────────────────────────────────────────────────────── */
 @media (max-width: 480px) {
   .hero-stage {
-    /* mobile: hero significantly wider than viewport — extends past edges,
-       body has overflow-x: clip so no horizontal scroll. HEPTRA + 7 read clearly. */
+    /* mobile: hero wider than viewport, perfectly centered in VIEWPORT (not in parent
+       column). Compensates for parent's 15px padding so the 7's HEPTRA cap is centered
+       on every phone — from iPhone SE 320 to iPhone Pro Max 430. */
     width: 140vw;
     max-width: 140vw;
-    margin: 8px -20vw 0;             /* -20vw bleed each side so 140vw stage centers in viewport */
+    align-self: flex-start;
+    margin: 8px 0 0 calc(-20vw - 15px);
   }
   .profile-card {
     margin-top: -140px;              /* deeper overlap because hero is significantly larger */
