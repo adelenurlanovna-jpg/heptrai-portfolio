@@ -883,51 +883,34 @@ a:hover {
    ───────────────────────────────────────────────────────── */
 @media (max-width: 480px) {
   .hero-stage {
-    /* mobile: hero bigger (150vw) so visual proportion matches desktop. */
-    width: 150vw;
-    max-width: 150vw;
+    /* mobile: hero wider than viewport, perfectly centered in VIEWPORT (not in parent
+       column). Compensates for parent's 15px padding so the 7's HEPTRA cap is centered
+       on every phone — from iPhone SE 320 to iPhone Pro Max 430. */
+    width: 130vw;
+    max-width: 130vw;
     align-self: flex-start;
-    margin: 8px 0 0 calc(-25vw - 15px);
+    margin: 8px 0 0 calc(-15vw - 15px);
   }
-  /* v4.7 chrome filters (HEPTRA legible) + bigger soft halo to dissolve
-     the chrome silhouette into the dark bg — no more sharp edge above HEPTRA cap. */
+  /* iOS Safari over-blends chrome filters → black HEPTRA letters disappear.
+     On mobile we strip color filters (saturate/contrast/brightness/blur) but
+     KEEP wide soft halo drop-shadows so the chrome edges fade gently into black
+     instead of cutting sharply. Halos sit OUTSIDE the silhouette → don't hide text. */
   .hero-img-base {
     opacity: 1;
     filter:
-      saturate(1.25)
-      contrast(1.04)
-      brightness(1.04)
-      drop-shadow(0 0 100px rgba(255, 215, 170, 0.55))
-      drop-shadow(0 0 220px rgba(255, 210, 160, 0.40))
-      drop-shadow(0 0 380px rgba(255, 200, 150, 0.25));
+      drop-shadow(0 0 60px rgba(255, 215, 170, 0.50))
+      drop-shadow(0 0 140px rgba(255, 210, 160, 0.32))
+      drop-shadow(0 0 260px rgba(255, 200, 150, 0.18));
     animation: floatY 9s ease-in-out infinite;
   }
-  /* Extra radial glow BEHIND the hero stage — provides ambient warm light
-     across the whole area so chrome edges don't appear "cut out" against pure black. */
-  .hero-stage::before {
-    content: "";
-    position: absolute;
-    inset: -60% -30% -30% -30%;
-    z-index: -1;
-    background: radial-gradient(
-      ellipse at 50% 45%,
-      rgba(255, 215, 170, 0.10) 0%,
-      rgba(255, 200, 150, 0.05) 30%,
-      transparent 65%
-    );
-    pointer-events: none;
-  }
-  /* Light sweep ON but at reduced opacity — wave plays without eating text. */
   .hero-light-sweep {
-    display: block;
-    opacity: 0.35;                  /* desktop is 0.78 — half-strength on mobile */
+    display: none;                  /* kill animated screen-blend sweep on mobile — it eats text */
   }
   .hero-grain {
-    display: block;
-    opacity: 0.20;                  /* desktop is 0.45 — softer */
+    display: none;                  /* grain overlay also adds noise to small text */
   }
   .profile-card {
-    margin-top: -200px;              /* deep overlap like desktop's -300px proportionally */
+    margin-top: -120px;              /* slightly less overlap since hero is now 130vw */
   }
   .splitform-main {
     padding: 16px 15px 64px;        /* tighter top/bottom padding on mobile */
