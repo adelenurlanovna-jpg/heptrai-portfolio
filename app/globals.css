@@ -23,6 +23,7 @@ html, body {
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: clip;                              /* mobile safety — no horizontal scroll from hero overflow */
 }
 
 body {
@@ -74,11 +75,13 @@ a:hover {
 .hero-stage {
   position: relative;
   width: 800px;                  /* v2.6: middle ground — 2× splitform, half-way between 600 and 1100 */
+  max-width: 100%;               /* mobile cap: never wider than parent's content area */
   aspect-ratio: 816 / 462;
   margin: 16px -200px 0;         /* -200px per side so 800px stage centers over 400px column */
   z-index: -1;
   isolation: isolate;
 }
+
 
 /* Base chrome image — pumped to vibrant 3-color iridescent (cyan + pink + gold accent).
    Stronger saturation + brightness, plus a warm-gold-leaning drop-shadow halo. */
@@ -244,7 +247,8 @@ a:hover {
    ───────────────────────────────────────────────────────── */
 .profile-card {
   position: relative;
-  width: 370px;                                /* v2.7: splitform-exact width */
+  width: 100%;
+  max-width: 370px;                            /* v2.7: splitform-exact width */
   margin-top: -300px;                          /* same overlap on the 7's leg */
   padding: 8px;                                /* splitform-exact */
   display: flex;
@@ -872,4 +876,19 @@ a:hover {
 @keyframes bandSweepFast {
   0%   { transform: translate(-35%, -35%); }
   100% { transform: translate( 35%,  35%); }
+}
+
+/* ─────────────────────────────────────────────────────────
+   MOBILE RESPONSIVE — placed at end so it overrides all base rules.
+   ───────────────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .hero-stage {
+    margin: 8px auto 0;             /* center within viewport, no overflow */
+  }
+  .profile-card {
+    margin-top: -80px;              /* smaller overlap — hero is much smaller on mobile */
+  }
+  .splitform-main {
+    padding: 16px 15px 64px;        /* tighter top/bottom padding on mobile */
+  }
 }
