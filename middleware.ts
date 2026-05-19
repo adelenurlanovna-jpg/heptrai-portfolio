@@ -4,8 +4,9 @@ import { routing } from "./i18n/routing";
 export default createMiddleware(routing);
 
 export const config = {
-  // Match all paths except API routes, Next.js internals, and static assets.
+  // Match all paths except API routes, Next.js internals, static assets,
+  // and auto-generated metadata icons (icon, apple-icon, opengraph-image).
   matcher: [
-    "/((?!api|_next|_vercel|.*\\..*).*)",
+    "/((?!api|_next|_vercel|icon|apple-icon|opengraph-image|twitter-image|robots\\.txt|sitemap\\.xml|.*\\..*).*)",
   ],
 };
