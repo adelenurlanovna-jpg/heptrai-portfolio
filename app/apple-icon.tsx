@@ -6,7 +6,7 @@ export const contentType = "image/png";
 
 export default async function AppleIcon() {
   const fontData = await fetch(
-    "https://github.com/google/fonts/raw/main/ofl/russoone/RussoOne-Regular.ttf",
+    "https://github.com/google/fonts/raw/main/ofl/sairastencilone/SairaStencilOne-Regular.ttf",
   ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
@@ -20,7 +20,7 @@ export default async function AppleIcon() {
           justifyContent: "center",
           background: "transparent",
           color: "#000000",
-          fontFamily: "Russo One",
+          fontFamily: "Saira Stencil",
           fontSize: 140,
           letterSpacing: "-0.02em",
           lineHeight: 1,
@@ -32,7 +32,7 @@ export default async function AppleIcon() {
     {
       ...size,
       fonts: [
-        { name: "Russo One", data: fontData, style: "normal", weight: 400 },
+        { name: "Saira Stencil", data: fontData, style: "normal", weight: 400 },
       ],
     },
   );
