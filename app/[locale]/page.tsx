@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { LocaleSwitcher } from "../components/LocaleSwitcher";
@@ -46,7 +47,14 @@ export default function Home() {
           aria-label="Profile"
         >
           <div className="profile-avatar" aria-hidden="true">
-            <span className="profile-avatar-initials">AK</span>
+            <Image
+              src="/avatar-256.png"
+              alt=""
+              width={160}
+              height={160}
+              priority
+              className="profile-avatar-img"
+            />
           </div>
 
           <div className="profile-body">
