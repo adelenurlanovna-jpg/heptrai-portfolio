@@ -51,5 +51,38 @@
     "ru": "Русский",
     "es": "Español",
     "zh": "中文"
+  },
+  "case": {
+    "back": "← 返回",
+    "visitLive": "访问网站 ↗",
+    "meta": {
+      "year": "年份",
+      "role": "角色",
+      "stack": "技术栈",
+      "status": "状态"
+    },
+    "sections": {
+      "overview": "概述",
+      "problem": "问题",
+      "approach": "方案",
+      "outcome": "成果"
+    },
+    "ctaTitle": "想要类似的项目?",
+    "ctaText": "从一周内的落地页到带 AI 的完整平台。在 Telegram 联系我或发送需求简报。",
+    "ctaButton": "在 Telegram 联系"
+  },
+  "cases": {
+    "qosvanta": {
+      "title": "QOSVANTA",
+      "subtitle": "全球支付解决方案市场",
+      "year": "2024 → 2026",
+      "role": "独立创始人 · 设计 · 代码 · AI",
+      "stack": "Next.js 16 · React 19 · Supabase · Claude · Telegram Bot",
+      "status": "已上线",
+      "overview": "面向 150+ 国家的支付提供商目录与匹配平台,覆盖法币、加密货币与本地支付方式。200+ 经过验证的提供商,四个风险分段(商业/高风险法币/高风险加密/替代),以及 AI 顾问「Damir」,能在几分钟内将对话转化为合格销售线索。",
+      "problem": "对商家来说,找到合适的支付提供商是一场调研噩梦:费率、司法管辖区、KYB 要求和风险政策分散在数百个网站和论坛中。大多数目录要么收费、要么过时、要么偏向付费推广的厂商。",
+      "approach": "基于 Supabase 的单一精选目录,按国家、费率、类型和加密支持过滤。AI 顾问 Damir(基于 Claude)用自然语言收集商家需求,并将线索路由给 Telegram 中合适的经理。独立完成:设计、代码、内容、基础设施、销售流程。",
+      "outcome": "已在 qosvanta.vercel.app 上线:200+ 提供商,25+ 支付方式,Damir AI 聊天已在生产环境运行。Telegram 机器人 @damir_qosvantabot 路由真实商家请求。SEO 优化,免费浏览。"
+    }
   }
 }

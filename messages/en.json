@@ -51,5 +51,38 @@
     "ru": "Русский",
     "es": "Español",
     "zh": "中文"
+  },
+  "case": {
+    "back": "← Back",
+    "visitLive": "Visit live ↗",
+    "meta": {
+      "year": "Year",
+      "role": "Role",
+      "stack": "Stack",
+      "status": "Status"
+    },
+    "sections": {
+      "overview": "Overview",
+      "problem": "Problem",
+      "approach": "Approach",
+      "outcome": "Outcome"
+    },
+    "ctaTitle": "Want something similar?",
+    "ctaText": "From a landing in a week to a full platform with AI under the hood. Write me on Telegram or send a brief.",
+    "ctaButton": "Write on Telegram"
+  },
+  "cases": {
+    "qosvanta": {
+      "title": "QOSVANTA",
+      "subtitle": "Global payment solutions marketplace",
+      "year": "2024 → 2026",
+      "role": "Solo founder · design · code · AI",
+      "stack": "Next.js 16 · React 19 · Supabase · Claude · Telegram Bot",
+      "status": "Live in production",
+      "overview": "A directory and matchmaker that helps merchants find payment providers across fiat, crypto and local methods — across 150+ countries. 200+ verified providers, four risk segments (business / high-risk fiat / high-risk crypto / alternative), and an AI consultant \"Damir\" that turns a chat into a qualified lead in minutes.",
+      "problem": "Finding the right payment provider is a research nightmare for merchants: rates, jurisdictions, KYB requirements and risk policies are spread across hundreds of provider sites and forums. Most directories are paid, outdated or biased toward who pays for placement.",
+      "approach": "A single curated catalog backed by Supabase, with comparison filters by country, fee, type and crypto support. The AI consultant Damir (Claude) collects the merchant's context in plain English and routes the lead to the right manager in Telegram. Built solo: design, code, content, infra, sales pipeline.",
+      "outcome": "Live at qosvanta.vercel.app with 200+ providers, 25+ payment methods and the Damir AI chat in production. Telegram bot @damir_qosvantabot routing real merchant requests. SEO-optimized, free to browse."
+    }
   }
 }

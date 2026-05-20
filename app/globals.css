@@ -1014,3 +1014,211 @@ a:hover {
     right: 12px;
   }
 }
+
+/* ─────────────────────────────────────────────────────────
+   CASE PAGE — /work/[slug]
+   Keeps the 400px column, but the cover breaks out slightly
+   for visual punch (like .hero-stage). Mono-typography meta block.
+   ───────────────────────────────────────────────────────── */
+.case-main {
+  padding-top: 64px;
+}
+
+.case-nav {
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.case-back {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+.case-back:hover {
+  color: var(--accent);
+}
+
+.case-header {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.case-title {
+  font-family: var(--font-jetbrains), monospace;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.case-subtitle {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.70);
+  margin: 0;
+}
+
+.case-meta {
+  width: 100%;
+  margin: 0 0 28px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.case-meta-row {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.case-meta-row dt {
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 9px;
+}
+
+.case-meta-row dd {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.45;
+}
+
+.case-cover {
+  position: relative;
+  display: block;
+  width: 480px;
+  margin: 0 -40px 32px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: #000;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  text-decoration: none;
+}
+
+.case-cover:hover {
+  border-color: rgba(0, 255, 209, 0.45);
+  transform: translateY(-2px);
+}
+
+.case-cover-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0.88;
+  transition: opacity 0.3s ease;
+}
+
+.case-cover:hover .case-cover-img {
+  opacity: 1;
+}
+
+.case-cover-overlay {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+.case-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.case-section-label {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  margin: 0 0 8px;
+}
+
+.case-section-text {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+}
+
+.case-cta {
+  width: 100%;
+  margin: 0 0 40px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, rgba(0, 255, 209, 0.04) 0%, rgba(255, 255, 255, 0.02) 100%);
+}
+
+.case-cta-title {
+  font-family: var(--font-jetbrains), monospace;
+  font-weight: 700;
+  font-size: 15px;
+  color: #ffffff;
+  margin: 0 0 8px;
+}
+
+.case-cta-text {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 12px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0 0 14px;
+}
+
+.case-cta-button {
+  display: inline-block;
+  padding: 9px 16px;
+  background: rgba(0, 255, 209, 0.10);
+  border: 1px solid rgba(0, 255, 209, 0.35);
+  border-radius: 999px;
+  color: var(--accent);
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.case-cta-button:hover {
+  background: rgba(0, 255, 209, 0.18);
+  border-color: rgba(0, 255, 209, 0.60);
+}
+
+@media (max-width: 480px) {
+  .case-cover {
+    width: calc(100vw - 30px);
+    margin: 0 0 32px;
+  }
+}
