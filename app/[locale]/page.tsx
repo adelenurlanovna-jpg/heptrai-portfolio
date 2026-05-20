@@ -140,7 +140,14 @@ export default function Home() {
 
         <div className="section-label">{t("sections.studio")}</div>
         <a href="https://heptrai.xyz/studio" className="entity-card">
-          <div className="entity-icon" aria-hidden="true">Λ</div>
+          <div className="entity-icon entity-icon-image entity-icon-image-dark" aria-hidden="true">
+            <Image
+              src="/project-heptrai.png"
+              alt=""
+              width={96}
+              height={96}
+            />
+          </div>
           <div className="entity-body">
             <h3 className="entity-title">{t("studio.title")}</h3>
             <p className="entity-subtitle">{t("studio.subtitle")}</p>
