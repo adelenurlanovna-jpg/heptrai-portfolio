@@ -101,7 +101,13 @@ export default function Home() {
               <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z" />
             </svg>
           </a>
-          <a href="https://linkedin.com/in/adele-keutayeva" className="social-icon" aria-label={t("social.linkedin")}>
+          <a
+            href="https://www.linkedin.com/in/adelya-keutayeva-1202673a7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-icon"
+            aria-label={t("social.linkedin")}
+          >
             <svg viewBox="0 0 24 24" fill="currentColor">
               <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z" />
             </svg>
