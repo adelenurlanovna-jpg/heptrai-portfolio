@@ -51,38 +51,5 @@
     "ru": "Русский",
     "es": "Español",
     "zh": "中文"
-  },
-  "case": {
-    "back": "← Volver",
-    "visitLive": "Ver sitio ↗",
-    "meta": {
-      "year": "Año",
-      "role": "Rol",
-      "stack": "Stack",
-      "status": "Estado"
-    },
-    "sections": {
-      "overview": "Resumen",
-      "problem": "Problema",
-      "approach": "Enfoque",
-      "outcome": "Resultado"
-    },
-    "ctaTitle": "¿Necesitas algo parecido?",
-    "ctaText": "Desde una landing en una semana hasta una plataforma completa con AI integrado. Escríbeme por Telegram o envía un brief.",
-    "ctaButton": "Escribir en Telegram"
-  },
-  "cases": {
-    "qosvanta": {
-      "title": "QOSVANTA",
-      "subtitle": "Marketplace global de soluciones de pago",
-      "year": "2024 → 2026",
-      "role": "Founder solo · diseño · código · AI",
-      "stack": "Next.js 16 · React 19 · Supabase · Claude · Telegram Bot",
-      "status": "En producción",
-      "overview": "Directorio y matchmaker que ayuda a los comerciantes a encontrar proveedores de pago en fiat, cripto y métodos locales — en 150+ países. 200+ proveedores verificados, cuatro segmentos de riesgo (business / high-risk fiat / high-risk crypto / alternativo) y un consultor AI «Damir» que convierte una conversación en un lead cualificado en minutos.",
-      "problem": "Encontrar el proveedor de pago adecuado es una pesadilla de investigación: tarifas, jurisdicciones, KYB y políticas de riesgo están dispersas en cientos de sitios y foros. La mayoría de los directorios son de pago, obsoletos o sesgados hacia quien paga por aparecer.",
-      "approach": "Un catálogo curado único sobre Supabase, con filtros por país, comisión, tipo y soporte de cripto. El consultor AI Damir (Claude) recoge el contexto del comerciante en texto natural y enruta el lead al manager correcto en Telegram. Hecho en solitario: diseño, código, contenido, infra, pipeline de ventas.",
-      "outcome": "En producción en qosvanta.vercel.app: 200+ proveedores, 25+ métodos de pago, AI chat Damir en producción. Bot de Telegram @damir_qosvantabot enrutando solicitudes reales. SEO, navegación gratuita."
-    }
   }
 }
