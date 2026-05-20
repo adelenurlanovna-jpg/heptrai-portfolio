@@ -615,6 +615,21 @@ a:hover {
   background: linear-gradient(135deg, #ffc864 0%, #7a4a0a 100%);
 }
 
+/* Image-based product icon — like splitf0rm/zerobrand case cards.
+   White inset so dark logos read; small inner padding via image scale. */
+.entity-icon-image {
+  background: #ffffff;
+  padding: 6px;
+  overflow: hidden;
+}
+
+.entity-icon-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
 .entity-body {
   flex: 1;
   min-width: 0;

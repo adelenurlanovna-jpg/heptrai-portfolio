@@ -152,27 +152,34 @@ export default function Home() {
         </a>
 
         <div className="section-label">{t("sections.projects")}</div>
-        <a href="#project-1" className="entity-card">
-          <div className="entity-icon" aria-hidden="true">LP</div>
-          <div className="entity-body">
-            <h3 className="entity-title">{t("projects.landingProtocol.title")}</h3>
-            <p className="entity-subtitle">{t("projects.landingProtocol.subtitle")}</p>
-          </div>
-          <svg className="entity-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7" />
-            <polyline points="7 7 17 7 17 17" />
-          </svg>
-        </a>
         <a
           href="https://qosvanta.vercel.app"
           target="_blank"
           rel="noopener noreferrer"
           className="entity-card"
         >
-          <div className="entity-icon entity-icon-alt" aria-hidden="true">Q</div>
+          <div className="entity-icon entity-icon-image" aria-hidden="true">
+            <Image
+              src="/project-qosvanta.png"
+              alt=""
+              width={96}
+              height={96}
+            />
+          </div>
           <div className="entity-body">
             <h3 className="entity-title">{t("projects.qosvanta.title")}</h3>
             <p className="entity-subtitle">{t("projects.qosvanta.subtitle")}</p>
+          </div>
+          <svg className="entity-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </a>
+        <a href="#project-1" className="entity-card">
+          <div className="entity-icon" aria-hidden="true">LP</div>
+          <div className="entity-body">
+            <h3 className="entity-title">{t("projects.landingProtocol.title")}</h3>
+            <p className="entity-subtitle">{t("projects.landingProtocol.subtitle")}</p>
           </div>
           <svg className="entity-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
             <line x1="7" y1="17" x2="17" y2="7" />
