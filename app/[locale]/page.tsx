@@ -190,7 +190,7 @@ export default function Home() {
         >
           <div className="entity-icon entity-icon-image entity-icon-image-dark" aria-hidden="true">
             <Image
-              src="/project-skyrise.png"
+              src="/project-skyrise-v2.png"
               alt=""
               width={96}
               height={96}
