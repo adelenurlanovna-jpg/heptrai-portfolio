@@ -182,6 +182,29 @@ export default function Home() {
             <polyline points="7 7 17 7 17 17" />
           </svg>
         </a>
+        <a
+          href="https://skyrise-flight.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="entity-card"
+        >
+          <div className="entity-icon entity-icon-image entity-icon-image-dark" aria-hidden="true">
+            <Image
+              src="/project-skyrise.png"
+              alt=""
+              width={96}
+              height={96}
+            />
+          </div>
+          <div className="entity-body">
+            <h3 className="entity-title">{t("projects.skyrise.title")}</h3>
+            <p className="entity-subtitle">{t("projects.skyrise.subtitle")}</p>
+          </div>
+          <svg className="entity-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </a>
         <a href="#project-1" className="entity-card">
           <div className="entity-icon" aria-hidden="true">LP</div>
           <div className="entity-body">
