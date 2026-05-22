@@ -1308,3 +1308,31 @@ a:hover {
   background: rgba(0,255,209,0.18);
   border-color: rgba(0,255,209,0.60);
 }
+
+/* Primary CTA — opens the actual bot in Telegram.
+   Visually bigger and brighter than the secondary "Brief me" CTA at the bottom. */
+.arman-try-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  width: 100%;
+  margin: 0 0 22px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, rgba(0,255,209,0.18) 0%, rgba(0,255,209,0.08) 100%);
+  border: 1px solid rgba(0,255,209,0.45);
+  border-radius: 12px;
+  color: var(--accent);
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 0 24px rgba(0,255,209,0.15);
+}
+.arman-try-button:hover {
+  background: linear-gradient(135deg, rgba(0,255,209,0.28) 0%, rgba(0,255,209,0.14) 100%);
+  border-color: rgba(0,255,209,0.70);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 32px rgba(0,255,209,0.28);
+}
