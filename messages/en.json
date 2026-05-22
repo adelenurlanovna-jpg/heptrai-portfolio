@@ -15,7 +15,14 @@
   "tgCta": "My Telegram channel",
   "sections": {
     "studio": "My studio",
+    "agents": "AI agents",
     "projects": "Projects & cases"
+  },
+  "agents": {
+    "arman": {
+      "title": "Arman",
+      "subtitle": "Personal AI agent in Telegram"
+    }
   },
   "studio": {
     "title": "HΞPTRΛI Studio",
@@ -55,5 +62,39 @@
     "ru": "Русский",
     "es": "Español",
     "zh": "中文"
+  },
+  "arman": {
+    "back": "← Back",
+    "title": "Arman",
+    "subtitle": "Personal AI agent in your Telegram",
+    "lead": "Built for myself. Receives errands by text or voice, executes them across web, WhatsApp and search, reports back as a real assistant would.",
+    "capabilitiesLabel": "What it does",
+    "capabilities": {
+      "receive": {
+        "title": "Receive",
+        "text": "Tasks come in via Telegram chat — text or voice. Voice is transcribed by Whisper, intent is parsed by Claude."
+      },
+      "execute": {
+        "title": "Execute",
+        "text": "Searches the web, drafts WhatsApp messages to real contacts, books appointments, compiles research. Tool-use on Claude Sonnet 4.6."
+      },
+      "report": {
+        "title": "Report",
+        "text": "Sends back results in Telegram — links, tables, confirmations. Asks follow-up questions when needed."
+      }
+    },
+    "stackLabel": "Stack",
+    "stack": "Python · FastAPI · Claude Sonnet 4.6 · python-telegram-bot · Waha (WhatsApp HTTP) · Whisper · Tavily · SQLite · Docker Compose",
+    "exampleLabel": "Sample dialog",
+    "dialog": {
+      "user1": "Compare three payment methods for Shopify in Brazil and give a recommendation",
+      "typing": "searching the web…",
+      "agent1": "Compared Stripe Brazil, Mercado Pago and Stone:",
+      "agent2": "Stripe — global brand, 3.99% + R$0.39, no local PIX.\nMercado Pago — local, 2.99% + PIX free, easier KYB.\nStone — flat 1.99% but only for established LTDA.",
+      "agent3": "Recommendation: Mercado Pago for small-medium volume — PIX out of the box, lower fees on local cards, faster onboarding."
+    },
+    "noteTitle": "Personal, not public",
+    "noteText": "Arman runs locally on my machine and processes only my account. The interesting part isn't the bot — it's the assembly: agent loop, tool-use orchestration, voice in, multi-channel out. If you need one tailored to your workflow, I build them on order.",
+    "ctaButton": "Brief me on Telegram"
   }
 }

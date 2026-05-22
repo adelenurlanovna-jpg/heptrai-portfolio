@@ -1039,3 +1039,272 @@ a:hover {
     right: 12px;
   }
 }
+
+/* ─────────────────────────────────────────────────────────
+   ARMAN AGENT PAGE — /agents/arman
+   Hero is an animated chat dialog that fades-in bubbles
+   in sequence, then loops on a long delay.
+   ───────────────────────────────────────────────────────── */
+.arman-main {
+  padding-top: 64px;
+}
+
+.arman-nav { width: 100%; margin-bottom: 28px; }
+.arman-back {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+.arman-back:hover { color: var(--accent); }
+
+.arman-header { width: 100%; margin-bottom: 28px; }
+.arman-title {
+  font-family: var(--font-jetbrains), monospace;
+  font-weight: 700; font-size: 32px; line-height: 1.1;
+  letter-spacing: -0.01em; color: #fff;
+  margin: 0 0 4px;
+}
+.arman-subtitle {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 12px; line-height: 1.5;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  margin: 0 0 14px;
+}
+.arman-lead {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 13px; line-height: 1.6;
+  color: rgba(255,255,255,0.75);
+  margin: 0;
+}
+
+/* Chat hero — terminal-like dark panel, mono font */
+.arman-chat {
+  width: 100%;
+  margin: 0 0 36px;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, rgba(0,255,209,0.02) 0%, rgba(0,0,0,0) 40%),
+    #0d0d10;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.arman-chat-header {
+  display: flex; align-items: center; gap: 6px;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+}
+.arman-chat-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+}
+.arman-chat-dot:nth-child(1) { background: #ff5f56; }
+.arman-chat-dot:nth-child(2) { background: #ffbd2e; }
+.arman-chat-dot:nth-child(3) { background: #27c93f; }
+.arman-chat-title {
+  margin-left: 10px;
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 9px;
+  color: rgba(255,255,255,0.40);
+  letter-spacing: 0.04em;
+}
+
+.arman-chat-body {
+  padding: 16px 14px;
+  display: flex; flex-direction: column;
+  gap: 10px;
+  min-height: 280px;
+}
+
+/* Bubbles enter via animation; start hidden */
+@keyframes arman-bubble-in {
+  0%   { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.arman-bubble {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 11.5px; line-height: 1.5;
+  padding: 8px 12px;
+  border-radius: 14px;
+  max-width: 88%;
+  opacity: 0;
+  animation: arman-bubble-in 0.4s ease-out forwards,
+             arman-bubble-loop 14s ease-in-out infinite;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+@keyframes arman-bubble-loop {
+  0%,   38%, 100% { opacity: 1; }
+  92%,  98%       { opacity: 0; }
+}
+
+.arman-bubble-line { display: block; }
+
+.arman-bubble-user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, rgba(0,255,209,0.18) 0%, rgba(0,255,209,0.10) 100%);
+  color: rgba(255,255,255,0.95);
+  border: 1px solid rgba(0,255,209,0.25);
+  border-bottom-right-radius: 4px;
+}
+
+.arman-bubble-agent {
+  align-self: flex-start;
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.88);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-bottom-left-radius: 4px;
+}
+
+.arman-bubble-final {
+  background: linear-gradient(135deg, rgba(255,100,170,0.10) 0%, rgba(124,58,237,0.10) 100%);
+  border-color: rgba(255,100,170,0.22);
+}
+
+/* Typing indicator */
+@keyframes arman-typing-fade {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  28%  { opacity: 1; }
+  35%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes arman-dot-bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30%           { transform: translateY(-2px); opacity: 1; }
+}
+
+.arman-typing {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 10px;
+  color: rgba(255,255,255,0.55);
+  opacity: 0;
+  animation: arman-typing-fade 14s ease-in-out infinite;
+}
+
+.arman-typing-label {
+  font-weight: 600;
+  color: rgba(255,255,255,0.72);
+}
+
+.arman-typing-dots {
+  display: inline-flex; gap: 3px;
+}
+.arman-typing-dots span {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: var(--accent);
+  animation: arman-dot-bounce 1s ease-in-out infinite;
+}
+.arman-typing-dots span:nth-child(2) { animation-delay: 0.15s; }
+.arman-typing-dots span:nth-child(3) { animation-delay: 0.30s; }
+
+.arman-typing-text {
+  color: rgba(255,255,255,0.45);
+  font-style: italic;
+}
+
+/* Content sections */
+.arman-section { width: 100%; margin: 0 0 28px; }
+.arman-section-label {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 9px; font-weight: 700;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.arman-caps {
+  display: flex; flex-direction: column;
+  gap: 14px;
+}
+.arman-cap {
+  padding: 12px 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+}
+.arman-cap-title {
+  font-family: var(--font-jetbrains), monospace;
+  font-weight: 700;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.arman-cap-text {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 12px; line-height: 1.55;
+  color: rgba(255,255,255,0.78);
+  margin: 0;
+}
+
+.arman-stack {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 11px; line-height: 1.7;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+}
+
+/* "Personal, not public" note */
+.arman-note {
+  width: 100%;
+  margin: 0 0 40px;
+  padding: 18px;
+  border: 1px solid rgba(0,255,209,0.18);
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, rgba(0,255,209,0.05) 0%, rgba(255,255,255,0.02) 100%);
+}
+.arman-note-title {
+  font-family: var(--font-jetbrains), monospace;
+  font-weight: 700; font-size: 14px;
+  color: #fff;
+  margin: 0 0 8px;
+}
+.arman-note-text {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 12px; line-height: 1.6;
+  color: rgba(255,255,255,0.72);
+  margin: 0 0 14px;
+}
+
+.arman-cta-button {
+  display: inline-block;
+  padding: 9px 16px;
+  background: rgba(0,255,209,0.10);
+  border: 1px solid rgba(0,255,209,0.35);
+  border-radius: 999px;
+  color: var(--accent);
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.arman-cta-button:hover {
+  background: rgba(0,255,209,0.18);
+  border-color: rgba(0,255,209,0.60);
+}

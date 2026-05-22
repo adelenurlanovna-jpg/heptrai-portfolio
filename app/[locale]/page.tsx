@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { LocaleSwitcher } from "../components/LocaleSwitcher";
+import { Link } from "../../i18n/navigation";
 
 export default function Home() {
   const t = useTranslations();
@@ -157,6 +158,26 @@ export default function Home() {
             <polyline points="7 7 17 7 17 17" />
           </svg>
         </a>
+
+        <div className="section-label">{t("sections.agents")}</div>
+        <Link href="/agents/arman" className="entity-card">
+          <div className="entity-icon entity-icon-image entity-icon-image-dark" aria-hidden="true">
+            <Image
+              src="/project-arman.png"
+              alt=""
+              width={96}
+              height={96}
+            />
+          </div>
+          <div className="entity-body">
+            <h3 className="entity-title">{t("agents.arman.title")}</h3>
+            <p className="entity-subtitle">{t("agents.arman.subtitle")}</p>
+          </div>
+          <svg className="entity-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </Link>
 
         <div className="section-label">{t("sections.projects")}</div>
         <a

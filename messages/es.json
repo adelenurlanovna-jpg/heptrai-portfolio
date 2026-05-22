@@ -15,7 +15,14 @@
   "tgCta": "Mi canal de Telegram",
   "sections": {
     "studio": "Mi estudio",
+    "agents": "Agentes IA",
     "projects": "Proyectos y casos"
+  },
+  "agents": {
+    "arman": {
+      "title": "Arman",
+      "subtitle": "Agente IA personal en Telegram"
+    }
   },
   "studio": {
     "title": "HΞPTRΛI Studio",
@@ -55,5 +62,39 @@
     "ru": "Русский",
     "es": "Español",
     "zh": "中文"
+  },
+  "arman": {
+    "back": "← Volver",
+    "title": "Arman",
+    "subtitle": "Agente IA personal en tu Telegram",
+    "lead": "Construido a medida. Recibe encargos por texto o voz, los ejecuta en la web, WhatsApp y búsqueda, e informa como un asistente real.",
+    "capabilitiesLabel": "Qué hace",
+    "capabilities": {
+      "receive": {
+        "title": "Recibe",
+        "text": "Las tareas llegan por chat de Telegram — texto o voz. Whisper transcribe la voz, Claude interpreta la intención."
+      },
+      "execute": {
+        "title": "Ejecuta",
+        "text": "Busca en la web, escribe mensajes de WhatsApp a contactos reales, agenda citas, hace investigaciones. Tool-use sobre Claude Sonnet 4.6."
+      },
+      "report": {
+        "title": "Reporta",
+        "text": "Devuelve los resultados en Telegram — enlaces, tablas, confirmaciones. Pregunta cuando hace falta."
+      }
+    },
+    "stackLabel": "Stack",
+    "stack": "Python · FastAPI · Claude Sonnet 4.6 · python-telegram-bot · Waha (WhatsApp HTTP) · Whisper · Tavily · SQLite · Docker Compose",
+    "exampleLabel": "Diálogo de ejemplo",
+    "dialog": {
+      "user1": "Compara tres métodos de pago para Shopify en Brasil y dame una recomendación",
+      "typing": "buscando en la web…",
+      "agent1": "Comparé Stripe Brazil, Mercado Pago y Stone:",
+      "agent2": "Stripe — marca global, 3,99% + R$0,39, sin PIX local.\nMercado Pago — local, 2,99% + PIX gratis, KYB más fácil.\nStone — tarifa plana 1,99% pero solo para LTDA establecidas.",
+      "agent3": "Recomiendo Mercado Pago para volumen pequeño-medio — PIX integrado, comisiones más bajas en tarjetas locales, onboarding más rápido."
+    },
+    "noteTitle": "Personal, no público",
+    "noteText": "Arman corre local en mi máquina y procesa solo mi cuenta. Lo interesante no es el bot — es el ensamblaje: agent loop, orquestación de tool-use, voz de entrada, multi-canal de salida. Si necesitas uno a medida para tu flujo, los construyo por encargo.",
+    "ctaButton": "Escríbeme en Telegram"
   }
 }

@@ -15,7 +15,14 @@
   "tgCta": "我的 Telegram 频道",
   "sections": {
     "studio": "我的工作室",
+    "agents": "AI 智能体",
     "projects": "项目与案例"
+  },
+  "agents": {
+    "arman": {
+      "title": "Arman",
+      "subtitle": "Telegram 中的个人 AI 智能体"
+    }
   },
   "studio": {
     "title": "HΞPTRΛI Studio",
@@ -55,5 +62,39 @@
     "ru": "Русский",
     "es": "Español",
     "zh": "中文"
+  },
+  "arman": {
+    "back": "← 返回",
+    "title": "Arman",
+    "subtitle": "Telegram 中的个人 AI 智能体",
+    "lead": "为自己打造。通过文字或语音接收任务,在网页、WhatsApp 和搜索中执行,像真实助理一样汇报结果。",
+    "capabilitiesLabel": "功能",
+    "capabilities": {
+      "receive": {
+        "title": "接收",
+        "text": "通过 Telegram 聊天接收任务 — 文字或语音。Whisper 转录语音,Claude 解析意图。"
+      },
+      "execute": {
+        "title": "执行",
+        "text": "搜索网络、向真实联系人发送 WhatsApp 消息、预约、整理调研。基于 Claude Sonnet 4.6 的工具调用。"
+      },
+      "report": {
+        "title": "汇报",
+        "text": "在 Telegram 返回结果 — 链接、表格、确认。必要时会追问。"
+      }
+    },
+    "stackLabel": "技术栈",
+    "stack": "Python · FastAPI · Claude Sonnet 4.6 · python-telegram-bot · Waha (WhatsApp HTTP) · Whisper · Tavily · SQLite · Docker Compose",
+    "exampleLabel": "对话示例",
+    "dialog": {
+      "user1": "比较巴西 Shopify 的三种支付方式并给出建议",
+      "typing": "正在搜索网络…",
+      "agent1": "已比较 Stripe Brazil、Mercado Pago 和 Stone:",
+      "agent2": "Stripe — 全球品牌,3.99% + R$0.39,无本地 PIX。\nMercado Pago — 本地,2.99% + PIX 免费,KYB 更简单。\nStone — 固定 1.99%,但仅限已注册 LTDA。",
+      "agent3": "建议中小流量选 Mercado Pago — 内置 PIX,本地卡费率更低,入驻更快。"
+    },
+    "noteTitle": "个人使用,非公开",
+    "noteText": "Arman 在我本地机器上运行,只处理我自己的账号。亮点不是这个机器人 — 而是它的组装:agent loop、tool-use 编排、语音输入、多通道输出。如果需要为你的工作流定制,我接受订单。",
+    "ctaButton": "在 Telegram 联系"
   }
 }

@@ -15,7 +15,14 @@
   "tgCta": "Мой Telegram канал",
   "sections": {
     "studio": "Моя студия",
+    "agents": "AI-агенты",
     "projects": "Проекты и кейсы"
+  },
+  "agents": {
+    "arman": {
+      "title": "Arman",
+      "subtitle": "Личный AI-агент в Telegram"
+    }
   },
   "studio": {
     "title": "HΞPTRΛI Studio",
@@ -55,5 +62,39 @@
     "ru": "Русский",
     "es": "Español",
     "zh": "中文"
+  },
+  "arman": {
+    "back": "← Назад",
+    "title": "Arman",
+    "subtitle": "Личный AI-агент в твоём Telegram",
+    "lead": "Собран под себя. Принимает поручения текстом или голосом, исполняет их через веб, WhatsApp и поиск, отчитывается как обычный ассистент.",
+    "capabilitiesLabel": "Что умеет",
+    "capabilities": {
+      "receive": {
+        "title": "Принимает",
+        "text": "Задачи приходят в Telegram — текстом или голосом. Голос распознаёт Whisper, смысл вытаскивает Claude."
+      },
+      "execute": {
+        "title": "Исполняет",
+        "text": "Гуглит, пишет в WhatsApp реальным контактам, записывает на приём, собирает рисёрч. Tool-use на Claude Sonnet 4.6."
+      },
+      "report": {
+        "title": "Отчитывается",
+        "text": "Присылает результат обратно в Telegram — ссылки, таблицы, подтверждения. Задаёт уточняющие вопросы когда нужно."
+      }
+    },
+    "stackLabel": "Стек",
+    "stack": "Python · FastAPI · Claude Sonnet 4.6 · python-telegram-bot · Waha (WhatsApp HTTP) · Whisper · Tavily · SQLite · Docker Compose",
+    "exampleLabel": "Пример диалога",
+    "dialog": {
+      "user1": "Сравни три метода оплаты для Shopify в Бразилии и дай рекомендацию",
+      "typing": "ищу в сети…",
+      "agent1": "Сравнил Stripe Brazil, Mercado Pago и Stone:",
+      "agent2": "Stripe — глобальный бренд, 3,99% + R$0,39, без локального PIX.\nMercado Pago — локальный, 2,99% + PIX бесплатно, проще KYB.\nStone — фикс 1,99%, но только для established LTDA.",
+      "agent3": "Рекомендую Mercado Pago для small-medium volume — PIX из коробки, ниже комиссии на местных картах, быстрее онбординг."
+    },
+    "noteTitle": "Личный, не публичный",
+    "noteText": "Arman работает локально на моей машине и обрабатывает только мой аккаунт. Интересна не сама коробочка — а сборка: agent loop, оркестрация tool-use, голос на входе, multi-channel на выходе. Если нужен под твой workflow — собираю на заказ.",
+    "ctaButton": "Написать в Telegram"
   }
 }
