@@ -93,7 +93,6 @@
       "agent2": "Stripe — 全球品牌,3.99% + R$0.39,无本地 PIX。\nMercado Pago — 本地,2.99% + PIX 免费,KYB 更简单。\nStone — 固定 1.99%,但仅限已注册 LTDA。",
       "agent3": "建议中小流量选 Mercado Pago — 内置 PIX,本地卡费率更低,入驻更快。"
     },
-    "tryButton": "在 Telegram 打开 Arman",
     "noteTitle": "个人使用,非公开",
     "noteText": "Arman 在我本地机器上运行,只处理我自己的账号。亮点不是这个机器人 — 而是它的组装:agent loop、tool-use 编排、语音输入、多通道输出。如果需要为你的工作流定制,我接受订单。",
     "ctaButton": "在 Telegram 联系"

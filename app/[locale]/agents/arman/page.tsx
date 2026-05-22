@@ -43,18 +43,6 @@ export default function ArmanPage() {
           <p className="arman-lead">{t("lead")}</p>
         </motion.header>
 
-        <motion.a
-          initial={{ opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.12, ease: "easeOut" }}
-          href="https://t.me/arman_akbot"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="arman-try-button"
-        >
-          {t("tryButton")} ↗
-        </motion.a>
-
         <motion.section
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}

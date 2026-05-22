@@ -93,7 +93,6 @@
       "agent2": "Stripe — marca global, 3,99% + R$0,39, sin PIX local.\nMercado Pago — local, 2,99% + PIX gratis, KYB más fácil.\nStone — tarifa plana 1,99% pero solo para LTDA establecidas.",
       "agent3": "Recomiendo Mercado Pago para volumen pequeño-medio — PIX integrado, comisiones más bajas en tarjetas locales, onboarding más rápido."
     },
-    "tryButton": "Abrir Arman en Telegram",
     "noteTitle": "Personal, no público",
     "noteText": "Arman corre local en mi máquina y procesa solo mi cuenta. Lo interesante no es el bot — es el ensamblaje: agent loop, orquestación de tool-use, voz de entrada, multi-canal de salida. Si necesitas uno a medida para tu flujo, los construyo por encargo.",
     "ctaButton": "Escríbeme en Telegram"

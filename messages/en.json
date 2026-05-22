@@ -93,7 +93,6 @@
       "agent2": "Stripe — global brand, 3.99% + R$0.39, no local PIX.\nMercado Pago — local, 2.99% + PIX free, easier KYB.\nStone — flat 1.99% but only for established LTDA.",
       "agent3": "Recommendation: Mercado Pago for small-medium volume — PIX out of the box, lower fees on local cards, faster onboarding."
     },
-    "tryButton": "Try Arman in Telegram",
     "noteTitle": "Personal, not public",
     "noteText": "Arman runs locally on my machine and processes only my account. The interesting part isn't the bot — it's the assembly: agent loop, tool-use orchestration, voice in, multi-channel out. If you need one tailored to your workflow, I build them on order.",
     "ctaButton": "Brief me on Telegram"

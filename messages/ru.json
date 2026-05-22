@@ -93,7 +93,6 @@
       "agent2": "Stripe — глобальный бренд, 3,99% + R$0,39, без локального PIX.\nMercado Pago — локальный, 2,99% + PIX бесплатно, проще KYB.\nStone — фикс 1,99%, но только для established LTDA.",
       "agent3": "Рекомендую Mercado Pago для small-medium volume — PIX из коробки, ниже комиссии на местных картах, быстрее онбординг."
     },
-    "tryButton": "Открыть Arman в Telegram",
     "noteTitle": "Личный, не публичный",
     "noteText": "Arman работает локально на моей машине и обрабатывает только мой аккаунт. Интересна не сама коробочка — а сборка: agent loop, оркестрация tool-use, голос на входе, multi-channel на выходе. Если нужен под твой workflow — собираю на заказ.",
     "ctaButton": "Написать в Telegram"
