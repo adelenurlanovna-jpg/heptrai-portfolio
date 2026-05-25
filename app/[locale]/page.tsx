@@ -182,8 +182,6 @@ export default function Home() {
         <div className="section-label">{t("sections.projects")}</div>
         <a
           href="https://qosvanta.vercel.app"
-          target="_blank"
-          rel="noopener noreferrer"
           className="entity-card"
         >
           <div className="entity-icon entity-icon-image" aria-hidden="true">
@@ -205,8 +203,6 @@ export default function Home() {
         </a>
         <a
           href="https://skyrise-flight.vercel.app"
-          target="_blank"
-          rel="noopener noreferrer"
           className="entity-card"
         >
           <div className="entity-icon entity-icon-image entity-icon-image-dark" aria-hidden="true">
