@@ -2,12 +2,12 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { LocaleSwitcher } from "../components/LocaleSwitcher";
-import { Link } from "../../i18n/navigation";
 
 export default function Home() {
   const t = useTranslations();
+  const locale = useLocale();
 
   return (
     <>
@@ -166,7 +166,7 @@ export default function Home() {
         </a>
 
         <div className="section-label">{t("sections.agents")}</div>
-        <Link href="/agents/arman" className="entity-card">
+        <a href={`/${locale}/agents/arman`} className="entity-card">
           <div className="entity-icon entity-icon-image entity-icon-image-dark" aria-hidden="true">
             <Image
               src="/project-arman.png"
@@ -183,8 +183,8 @@ export default function Home() {
             <line x1="7" y1="17" x2="17" y2="7" />
             <polyline points="7 7 17 7 17 17" />
           </svg>
-        </Link>
-        <Link href="/agents/damir" className="entity-card">
+        </a>
+        <a href={`/${locale}/agents/damir`} className="entity-card">
           <div className="entity-icon entity-icon-image entity-icon-image-dark" aria-hidden="true">
             <Image
               src="/project-damir.png"
@@ -201,7 +201,7 @@ export default function Home() {
             <line x1="7" y1="17" x2="17" y2="7" />
             <polyline points="7 7 17 7 17 17" />
           </svg>
-        </Link>
+        </a>
 
         <div className="section-label">{t("sections.projects")}</div>
         <a

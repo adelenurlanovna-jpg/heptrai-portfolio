@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { LocaleSwitcher } from "../../../components/LocaleSwitcher";
-import { Link } from "../../../../i18n/navigation";
 
 /* Cycle delays (in seconds) for the animated chat in the hero.
    Each entry blocks until the prior animation visually settles. */
@@ -17,6 +16,7 @@ const D = {
 
 export default function ArmanPage() {
   const t = useTranslations("arman");
+  const locale = useLocale();
 
   return (
     <>
@@ -29,7 +29,7 @@ export default function ArmanPage() {
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="arman-nav"
         >
-          <Link href="/" className="arman-back">{t("back")}</Link>
+          <a href={`/${locale}`} className="arman-back">{t("back")}</a>
         </motion.div>
 
         <motion.header

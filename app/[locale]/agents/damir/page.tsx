@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { LocaleSwitcher } from "../../../components/LocaleSwitcher";
-import { Link } from "../../../../i18n/navigation";
 
 /* Cycle delays (in seconds) for Damir's animated dialog. */
 const D = {
@@ -18,6 +17,7 @@ const QOSVANTA_URL = "https://qosvanta.vercel.app";
 
 export default function DamirPage() {
   const t = useTranslations("damir");
+  const locale = useLocale();
 
   return (
     <>
@@ -30,7 +30,7 @@ export default function DamirPage() {
           transition={{ duration: 0.4, ease: "easeOut" }}
           className="damir-nav"
         >
-          <Link href="/" className="damir-back">{t("back")}</Link>
+          <a href={`/${locale}`} className="damir-back">{t("back")}</a>
         </motion.div>
 
         <motion.header
