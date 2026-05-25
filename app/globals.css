@@ -1716,3 +1716,25 @@ a:hover {
     opacity: 1;
   }
 }
+
+/* WIP badge — work-in-progress marker on entity title.
+   Soft amber pill that sits next to the title text. */
+.entity-wip {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  padding: 2px 8px;
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: #ffb04a;
+  background: rgba(255, 176, 74, 0.10);
+  border: 1px solid rgba(255, 176, 74, 0.32);
+  border-radius: 999px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.entity-title { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 0; }

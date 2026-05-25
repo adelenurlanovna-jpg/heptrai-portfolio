@@ -266,11 +266,24 @@ export default function Home() {
             <polyline points="7 7 17 7 17 17" />
           </svg>
         </a>
-<a href="#project-3" className="entity-card">
-          <div className="entity-icon entity-icon-alt-2" aria-hidden="true">O</div>
+<a
+          href="https://sigma-world-seven.vercel.app"
+          className="entity-card entity-card-wip"
+        >
+          <div className="entity-icon entity-icon-image entity-icon-image-dark" aria-hidden="true">
+            <Image
+              src="/project-sigma.png"
+              alt=""
+              width={96}
+              height={96}
+            />
+          </div>
           <div className="entity-body">
-            <h3 className="entity-title">{t("projects.onyx.title")}</h3>
-            <p className="entity-subtitle">{t("projects.onyx.subtitle")}</p>
+            <h3 className="entity-title">
+              {t("projects.sigma.title")}
+              <span className="entity-wip">{t("status.wip")}</span>
+            </h3>
+            <p className="entity-subtitle">{t("projects.sigma.subtitle")}</p>
           </div>
           <svg className="entity-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
             <line x1="7" y1="17" x2="17" y2="7" />

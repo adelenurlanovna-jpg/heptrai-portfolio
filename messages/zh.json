@@ -49,10 +49,13 @@
       "title": "Loom Landing Protocol",
       "subtitle": "Web3 · 非托管借贷协议"
     },
-    "onyx": {
-      "title": "ONYX",
-      "subtitle": "高端落地页"
+    "sigma": {
+      "title": "SiGMA World",
+      "subtitle": "iGaming · 世界之旅"
     }
+  },
+  "status": {
+    "wip": "开发中"
   },
   "social": {
     "website": "网站",

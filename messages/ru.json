@@ -49,10 +49,13 @@
       "title": "Loom Landing Protocol",
       "subtitle": "Web3 · Non-custodial lending-протокол"
     },
-    "onyx": {
-      "title": "ONYX",
-      "subtitle": "Премиум-лендинг"
+    "sigma": {
+      "title": "SiGMA World",
+      "subtitle": "Айгейминг · Мировой тур"
     }
+  },
+  "status": {
+    "wip": "В разработке"
   },
   "social": {
     "website": "Сайт",
