@@ -1051,14 +1051,27 @@ a:hover {
 
 .arman-nav { width: 100%; margin-bottom: 28px; }
 .arman-back {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  margin-left: -14px;
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px;
-  color: rgba(255,255,255,0.55);
+  font-size: 12px;
+  color: rgba(255,255,255,0.75);
   text-decoration: none;
   letter-spacing: 0.02em;
-  transition: color 0.2s ease;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
 }
-.arman-back:hover { color: var(--accent); }
+.arman-back:hover,
+.arman-back:active {
+  color: var(--accent);
+  background: rgba(0,255,209,0.08);
+  border-color: rgba(0,255,209,0.35);
+}
 
 .arman-header { width: 100%; margin-bottom: 28px; }
 .arman-title {
@@ -1372,13 +1385,27 @@ a:hover {
 .damir-main { padding-top: 64px; }
 .damir-nav { width: 100%; margin-bottom: 28px; }
 .damir-back {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 14px;
+  margin-left: -14px;
   font-family: var(--font-jetbrains), monospace;
-  font-size: 11px; letter-spacing: 0.02em;
-  color: rgba(255,255,255,0.55);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.75);
   text-decoration: none;
-  transition: color 0.2s ease;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
 }
-.damir-back:hover { color: #E2C97E; }
+.damir-back:hover,
+.damir-back:active {
+  color: #E2C97E;
+  background: rgba(201,168,76,0.10);
+  border-color: rgba(226,201,126,0.35);
+}
 
 .damir-header { width: 100%; margin-bottom: 16px; }
 .damir-title {
