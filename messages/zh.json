@@ -22,6 +22,10 @@
     "arman": {
       "title": "Arman",
       "subtitle": "Telegram 中的个人 AI 智能体"
+    },
+    "damir": {
+      "title": "Damir",
+      "subtitle": "QOSVANTA 支付顾问"
     }
   },
   "studio": {
@@ -100,5 +104,41 @@
     "noteTitle": "个人使用,非公开",
     "noteText": "Arman 在我本地机器上运行,只处理我自己的账号。亮点不是这个机器人 — 而是它的组装:agent loop、tool-use 编排、语音输入、多通道输出。如果需要为你的工作流定制,我接受订单。",
     "ctaButton": "在 Telegram 联系"
+  },
+  "damir": {
+    "back": "← 返回",
+    "title": "Damir",
+    "subtitle": "QOSVANTA 的支付解决方案顾问",
+    "scopeLabel": "仅在 QOSVANTA 内运行",
+    "scopeText": "Damir 仅在 qosvanta.vercel.app 上工作。回答关于支付提供商、费率、司法管辖的问题,并将合格商家通过 Telegram 转交给真人客户经理。",
+    "openQosvanta": "打开 QOSVANTA ↗",
+    "capabilitiesLabel": "功能",
+    "capabilities": {
+      "advise": {
+        "title": "咨询",
+        "text": "按国家、费率、KYB、风险分段比较 200+ 经过验证的提供商 — 法币、加密、本地通道。用平实语言回答,不堆术语。"
+      },
+      "qualify": {
+        "title": "筛选",
+        "text": "向商家询问交易量、国家、方式、风险画像。在 3-5 条消息内把模糊意向转成具体需求摘要。"
+      },
+      "route": {
+        "title": "转交",
+        "text": "把合格线索连同完整上下文交给 Telegram 上对应的真人客户经理。没有「联系销售」的死胡同。"
+      }
+    },
+    "stackLabel": "技术栈",
+    "stack": "Claude Sonnet 4.6 · Next.js 16 · Supabase · 工具调用 · Telegram 路由",
+    "exampleLabel": "对话示例",
+    "dialog": {
+      "user1": "iGaming 创业,巴西,月交易量约 $200k。需要 PIX + 银行卡、低费率、快速入驻。",
+      "typing": "正在筛选 200+ 提供商…",
+      "agent1": "好的 — 这是个可对接的画像。三个匹配:",
+      "agent2": "• AtlasPay LATAM — PIX + 卡,2.5%,KYB 快\n• Mercado Pago — 2.99% + PIX 免费,入驻更简单\n• Stone — 固定 1.99%,但仅限已注册 LTDA",
+      "agent3": "你这阶段我会从 AtlasPay LATAM 开始。要把你的信息转给他们的客户经理吗?"
+    },
+    "noteTitle": "QOSVANTA 专属智能体",
+    "noteText": "Damir 是 QOSVANTA 产品的一部分,不是独立服务。要真正与他对话,请打开 QOSVANTA,点击右下角的金色聊天按钮。",
+    "ctaButton": "在 QOSVANTA 上与 Damir 对话"
   }
 }

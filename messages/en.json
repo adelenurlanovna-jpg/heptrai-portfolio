@@ -22,6 +22,10 @@
     "arman": {
       "title": "Arman",
       "subtitle": "Personal AI agent in Telegram"
+    },
+    "damir": {
+      "title": "Damir",
+      "subtitle": "QOSVANTA's payment consultant"
     }
   },
   "studio": {
@@ -100,5 +104,41 @@
     "noteTitle": "Personal, not public",
     "noteText": "Arman runs locally on my machine and processes only my account. The interesting part isn't the bot — it's the assembly: agent loop, tool-use orchestration, voice in, multi-channel out. If you need one tailored to your workflow, I build them on order.",
     "ctaButton": "Brief me on Telegram"
+  },
+  "damir": {
+    "back": "← Back",
+    "title": "Damir",
+    "subtitle": "QOSVANTA's payment solutions consultant",
+    "scopeLabel": "Lives inside QOSVANTA",
+    "scopeText": "Damir works only on qosvanta.vercel.app. He answers questions about payment providers, fees, jurisdictions, and routes qualified merchants to a human manager on Telegram.",
+    "openQosvanta": "Open QOSVANTA ↗",
+    "capabilitiesLabel": "What he does",
+    "capabilities": {
+      "advise": {
+        "title": "Advises",
+        "text": "Compares 200+ verified providers — fiat, crypto, local rails — by country, fee, KYB, risk segment. Plain-English answers, no jargon dump."
+      },
+      "qualify": {
+        "title": "Qualifies",
+        "text": "Asks the merchant about volume, country, methods, risk profile — turns vague intent into a concrete brief in 3-5 messages."
+      },
+      "route": {
+        "title": "Routes",
+        "text": "Hands off the qualified lead to the right human manager on Telegram with full context. No \"talk to sales\" dead-ends."
+      }
+    },
+    "stackLabel": "Stack",
+    "stack": "Claude Sonnet 4.6 · Next.js 16 · Supabase · Tool-use · Telegram routing",
+    "exampleLabel": "Sample dialog",
+    "dialog": {
+      "user1": "iGaming startup, Brazil, ~$200k/mo volume. Need PIX + cards, low fees, fast onboarding.",
+      "typing": "checking 200+ providers…",
+      "agent1": "Good — that's a fit-able profile. Three matches:",
+      "agent2": "• AtlasPay LATAM — PIX + cards, 2.5%, fast KYB\n• Mercado Pago — 2.99% + free PIX, easier onboarding\n• Stone — 1.99% flat, but only for established LTDA",
+      "agent3": "For your stage I'd start with AtlasPay LATAM. Want me to forward your details to their manager?"
+    },
+    "noteTitle": "QOSVANTA-only agent",
+    "noteText": "Damir is part of QOSVANTA's product — not a stand-alone service. To actually talk to him, open QOSVANTA and click the gold chat button in the bottom-right corner.",
+    "ctaButton": "Talk to Damir on QOSVANTA"
   }
 }

@@ -1363,3 +1363,329 @@ a:hover {
 @media (prefers-reduced-motion: reduce) {
   .loom-spin, .loom-pulse { animation: none; }
 }
+
+/* ─────────────────────────────────────────────────────────
+   DAMIR AGENT PAGE — /agents/damir
+   QOSVANTA's gold theme (#C9A84C / #E2C97E) so the agent reads
+   as a brand sibling of the QOSVANTA chat widget.
+   ───────────────────────────────────────────────────────── */
+.damir-main { padding-top: 64px; }
+.damir-nav { width: 100%; margin-bottom: 28px; }
+.damir-back {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 11px; letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.damir-back:hover { color: #E2C97E; }
+
+.damir-header { width: 100%; margin-bottom: 16px; }
+.damir-title {
+  font-family: var(--font-jetbrains), monospace;
+  font-weight: 700; font-size: 32px; line-height: 1.1;
+  letter-spacing: -0.01em; color: #fff;
+  margin: 0 0 4px;
+}
+.damir-subtitle {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 12px; line-height: 1.5;
+  color: #E2C97E;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+/* "Lives inside QOSVANTA" scope callout */
+.damir-scope {
+  width: 100%;
+  margin: 0 0 28px;
+  padding: 16px 18px;
+  border: 1px solid rgba(201,168,76,0.30);
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, rgba(201,168,76,0.08) 0%, rgba(201,168,76,0.02) 100%);
+}
+.damir-scope-label {
+  font-family: var(--font-jetbrains), monospace;
+  font-weight: 700; font-size: 9px;
+  letter-spacing: 0.10em; text-transform: uppercase;
+  color: #E2C97E;
+  margin-bottom: 8px;
+}
+.damir-scope-text {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 12px; line-height: 1.6;
+  color: rgba(255,255,255,0.80);
+  margin: 0 0 12px;
+}
+.damir-scope-link {
+  display: inline-block;
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #E2C97E;
+  padding: 6px 12px;
+  border: 1px solid rgba(226,201,126,0.40);
+  border-radius: 999px;
+  background: rgba(201,168,76,0.10);
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.damir-scope-link:hover {
+  background: rgba(201,168,76,0.20);
+  border-color: rgba(226,201,126,0.70);
+  color: #F0D791;
+}
+
+/* Chat panel — QOSVANTA-style gold accents on dark */
+.damir-chat {
+  width: 100%;
+  margin: 0 0 36px;
+  border: 1px solid rgba(201,168,76,0.22);
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, rgba(201,168,76,0.05) 0%, rgba(0,0,0,0) 35%),
+    #0D0F1E;                                         /* QOSVANTA's dark navy */
+  overflow: hidden;
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.5),
+    0 0 24px rgba(201,168,76,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.damir-chat-header {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(201,168,76,0.15);
+  background: rgba(255,255,255,0.02);
+}
+.damir-chat-avatar {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 28%, #F0D791 0%, #C9A84C 60%, #82601E 100%);
+  box-shadow: 0 0 12px rgba(201,168,76,0.55);
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.damir-chat-avatar span {
+  position: absolute;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.55);
+  top: 5px; left: 6px;
+  filter: blur(2px);
+}
+.damir-chat-meta { display: flex; flex-direction: column; gap: 2px; }
+.damir-chat-name {
+  font-family: var(--font-jetbrains), monospace;
+  font-weight: 700; font-size: 13px;
+  color: #fff;
+}
+.damir-chat-status {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,0.45);
+}
+.damir-chat-pulse {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #4ADE80;
+  box-shadow: 0 0 6px rgba(74,222,128,0.85);
+  animation: damir-pulse 2s ease-in-out infinite;
+}
+@keyframes damir-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.55; transform: scale(0.85); }
+}
+
+.damir-chat-body {
+  padding: 18px 16px;
+  display: flex; flex-direction: column;
+  gap: 10px;
+  min-height: 300px;
+}
+
+/* Bubble enter + loop */
+@keyframes damir-bubble-in {
+  0%   { opacity: 0; transform: translateY(6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes damir-bubble-loop {
+  0%, 38%, 100% { opacity: 1; }
+  92%, 98%     { opacity: 0; }
+}
+
+.damir-bubble {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 11.5px; line-height: 1.55;
+  padding: 9px 13px;
+  border-radius: 14px;
+  max-width: 88%;
+  opacity: 0;
+  animation:
+    damir-bubble-in 0.4s ease-out forwards,
+    damir-bubble-loop 15s ease-in-out infinite;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.damir-bubble-line { display: block; }
+
+.damir-bubble-user {
+  align-self: flex-end;
+  background:
+    linear-gradient(135deg, rgba(201,168,76,0.22) 0%, rgba(201,168,76,0.10) 100%);
+  color: rgba(255,255,255,0.95);
+  border: 1px solid rgba(201,168,76,0.32);
+  border-bottom-right-radius: 4px;
+}
+.damir-bubble-agent {
+  align-self: flex-start;
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.88);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-bottom-left-radius: 4px;
+}
+.damir-bubble-final {
+  background:
+    linear-gradient(135deg, rgba(226,201,126,0.14) 0%, rgba(201,168,76,0.08) 100%);
+  border-color: rgba(226,201,126,0.32);
+  color: #fff;
+}
+
+/* Typing */
+@keyframes damir-typing-fade {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  28%  { opacity: 1; }
+  35%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes damir-dot-bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30%           { transform: translateY(-2px); opacity: 1; }
+}
+.damir-typing {
+  align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.18);
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 10px;
+  color: rgba(255,255,255,0.55);
+  opacity: 0;
+  animation: damir-typing-fade 15s ease-in-out infinite;
+}
+.damir-typing-label {
+  font-weight: 600;
+  color: #E2C97E;
+}
+.damir-typing-dots { display: inline-flex; gap: 3px; }
+.damir-typing-dots span {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: #E2C97E;
+  animation: damir-dot-bounce 1s ease-in-out infinite;
+}
+.damir-typing-dots span:nth-child(2) { animation-delay: 0.15s; }
+.damir-typing-dots span:nth-child(3) { animation-delay: 0.30s; }
+.damir-typing-text {
+  color: rgba(255,255,255,0.45);
+  font-style: italic;
+}
+
+/* Content sections */
+.damir-section { width: 100%; margin: 0 0 28px; }
+.damir-section-label {
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 9px; font-weight: 700;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.10em; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.damir-caps {
+  display: flex; flex-direction: column;
+  gap: 14px;
+}
+.damir-cap {
+  padding: 12px 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+}
+.damir-cap-title {
+  font-family: var(--font-jetbrains), monospace;
+  font-weight: 700; font-size: 11px;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  color: #E2C97E;
+  margin-bottom: 6px;
+}
+.damir-cap-text {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 12px; line-height: 1.55;
+  color: rgba(255,255,255,0.78);
+  margin: 0;
+}
+.damir-stack {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 11px; line-height: 1.7;
+  color: rgba(255,255,255,0.65);
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+}
+
+/* "QOSVANTA-only" CTA card */
+.damir-note {
+  width: 100%;
+  margin: 0 0 40px;
+  padding: 18px;
+  border: 1px solid rgba(201,168,76,0.30);
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, rgba(201,168,76,0.10) 0%, rgba(255,255,255,0.02) 100%);
+}
+.damir-note-title {
+  font-family: var(--font-jetbrains), monospace;
+  font-weight: 700; font-size: 14px;
+  color: #fff;
+  margin: 0 0 8px;
+}
+.damir-note-text {
+  font-family: var(--font-ibm-plex), monospace;
+  font-size: 12px; line-height: 1.6;
+  color: rgba(255,255,255,0.72);
+  margin: 0 0 14px;
+}
+.damir-cta-button {
+  display: inline-block;
+  padding: 10px 18px;
+  background:
+    linear-gradient(135deg, rgba(226,201,126,0.20) 0%, rgba(201,168,76,0.10) 100%);
+  border: 1px solid rgba(226,201,126,0.45);
+  border-radius: 999px;
+  color: #E2C97E;
+  font-family: var(--font-jetbrains), monospace;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.damir-cta-button:hover {
+  background:
+    linear-gradient(135deg, rgba(226,201,126,0.30) 0%, rgba(201,168,76,0.16) 100%);
+  border-color: rgba(226,201,126,0.70);
+  color: #F0D791;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .damir-bubble, .damir-typing, .damir-chat-pulse {
+    animation: none;
+    opacity: 1;
+  }
+}

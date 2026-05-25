@@ -178,6 +178,24 @@ export default function Home() {
             <polyline points="7 7 17 7 17 17" />
           </svg>
         </Link>
+        <Link href="/agents/damir" className="entity-card">
+          <div className="entity-icon entity-icon-image entity-icon-image-dark" aria-hidden="true">
+            <Image
+              src="/project-damir.png"
+              alt=""
+              width={96}
+              height={96}
+            />
+          </div>
+          <div className="entity-body">
+            <h3 className="entity-title">{t("agents.damir.title")}</h3>
+            <p className="entity-subtitle">{t("agents.damir.subtitle")}</p>
+          </div>
+          <svg className="entity-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </Link>
 
         <div className="section-label">{t("sections.projects")}</div>
         <a

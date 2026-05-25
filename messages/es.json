@@ -22,6 +22,10 @@
     "arman": {
       "title": "Arman",
       "subtitle": "Agente IA personal en Telegram"
+    },
+    "damir": {
+      "title": "Damir",
+      "subtitle": "Consultor de pagos de QOSVANTA"
     }
   },
   "studio": {
@@ -100,5 +104,41 @@
     "noteTitle": "Personal, no público",
     "noteText": "Arman corre local en mi máquina y procesa solo mi cuenta. Lo interesante no es el bot — es el ensamblaje: agent loop, orquestación de tool-use, voz de entrada, multi-canal de salida. Si necesitas uno a medida para tu flujo, los construyo por encargo.",
     "ctaButton": "Escríbeme en Telegram"
+  },
+  "damir": {
+    "back": "← Volver",
+    "title": "Damir",
+    "subtitle": "Consultor de soluciones de pago de QOSVANTA",
+    "scopeLabel": "Vive dentro de QOSVANTA",
+    "scopeText": "Damir solo funciona en qosvanta.vercel.app. Responde preguntas sobre proveedores de pago, tarifas, jurisdicciones, y enruta a comerciantes calificados hacia un manager humano en Telegram.",
+    "openQosvanta": "Abrir QOSVANTA ↗",
+    "capabilitiesLabel": "Qué hace",
+    "capabilities": {
+      "advise": {
+        "title": "Asesora",
+        "text": "Compara 200+ proveedores verificados — fiat, cripto, rieles locales — por país, comisión, KYB, segmento de riesgo. Respuestas claras, sin jerga."
+      },
+      "qualify": {
+        "title": "Califica",
+        "text": "Pregunta al comerciante por volumen, país, métodos, perfil de riesgo. Convierte una intención vaga en un brief concreto en 3-5 mensajes."
+      },
+      "route": {
+        "title": "Enruta",
+        "text": "Pasa el lead calificado al manager humano correcto en Telegram con todo el contexto. Sin callejones sin salida de \"contacta con ventas\"."
+      }
+    },
+    "stackLabel": "Stack",
+    "stack": "Claude Sonnet 4.6 · Next.js 16 · Supabase · Tool-use · Routing Telegram",
+    "exampleLabel": "Diálogo de ejemplo",
+    "dialog": {
+      "user1": "Startup iGaming, Brasil, volumen ~$200k/mes. Necesito PIX + tarjetas, comisiones bajas, onboarding rápido.",
+      "typing": "revisando 200+ proveedores…",
+      "agent1": "Bien — es un perfil viable. Tres opciones:",
+      "agent2": "• AtlasPay LATAM — PIX + tarjetas, 2,5%, KYB rápido\n• Mercado Pago — 2,99% + PIX gratis, onboarding más simple\n• Stone — tarifa plana 1,99%, pero solo para LTDA establecidas",
+      "agent3": "Para tu etapa empezaría con AtlasPay LATAM. ¿Quieres que reenvíe tus datos a su manager?"
+    },
+    "noteTitle": "Agente solo de QOSVANTA",
+    "noteText": "Damir es parte del producto QOSVANTA — no un servicio independiente. Para hablar con él de verdad, abre QOSVANTA y haz clic en el botón dorado de chat en la esquina inferior derecha.",
+    "ctaButton": "Hablar con Damir en QOSVANTA"
   }
 }
