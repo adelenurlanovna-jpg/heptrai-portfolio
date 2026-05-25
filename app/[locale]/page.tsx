@@ -226,13 +226,12 @@ export default function Home() {
           href="https://loom-protocol.vercel.app"
           className="entity-card"
         >
-          <div className="entity-icon entity-icon-image entity-icon-image-dark" aria-hidden="true">
-            <Image
-              src="/project-loom.png"
-              alt=""
-              width={96}
-              height={96}
-            />
+          <div className="entity-icon entity-icon-image entity-icon-image-dark loom-icon" aria-hidden="true">
+            <div className="loom-spin">
+              <svg className="loom-pulse" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="50,8 92,50 50,92 8,50" fill="#7effb2" />
+              </svg>
+            </div>
           </div>
           <div className="entity-body">
             <h3 className="entity-title">{t("projects.loom.title")}</h3>
